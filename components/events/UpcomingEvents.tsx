@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import EventCard from "@/components/events/EventCard";
 import EventFilterBar from "@/components/events/EventFilterBar";
+import EventModal, { type EventData } from "@/components/events/EventModal";
 import type { EventCategory, EventItem } from "@/data/events";
 
 const defaultCategory: "All" | EventCategory = "All";
@@ -17,6 +18,7 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
   const [selectedCategory, setSelectedCategory] = useState<"All" | EventCategory>(defaultCategory);
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [activeModalEvent, setActiveModalEvent] = useState<EventData | null>(null);
 
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
@@ -44,7 +46,7 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
-              Upcoming events
+              Upcoming events & workshops
             </p>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
               Find what fits your week.
@@ -84,11 +86,19 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
                 event={event}
                 expanded={expandedId === event.id}
                 onToggle={(id) => setExpandedId((current) => (current === id ? null : id))}
+                onRegister={(item) => setActiveModalEvent(item as EventData)}
               />
             ))}
           </div>
         )}
       </div>
+
+      {/* Interactive RSVP Registration Modal */}
+      <EventModal
+        event={activeModalEvent}
+        isOpen={Boolean(activeModalEvent)}
+        onClose={() => setActiveModalEvent(null)}
+      />
     </section>
   );
 }

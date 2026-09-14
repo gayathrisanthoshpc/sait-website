@@ -1,42 +1,80 @@
-import { Crown } from "lucide-react";
+"use client";
 
+import { Crown, Trophy, Sparkles } from "lucide-react";
 import { demoLeaderboard } from "@/data/activities";
 
 export default function Leaderboard() {
   return (
-    <section className="rounded-[2rem] border border-black/10 bg-[#111111] p-5 text-white md:p-6">
+    <section className="rounded-[2rem] border border-black/10 bg-[#111111] p-5 text-white md:p-6 shadow-xl">
       <div className="mb-5 flex items-center justify-between gap-3">
-        <h3 className="text-2xl font-medium tracking-tight text-white">Leaderboard</h3>
-        <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/70">
-          DEMO
+        <div className="flex items-center gap-2">
+          <Trophy size={18} className="text-[#e4572e]" />
+          <h3 className="text-xl font-bold tracking-tight text-white">
+            Top Contributor Leaderboard
+          </h3>
+        </div>
+        <span className="rounded-full border border-[#e4572e]/40 bg-[#e4572e]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f7c7b9]">
+          S5 / S7 BATCH
         </span>
       </div>
 
-      <div className="space-y-3">
-        {demoLeaderboard.map((item, index) => (
-          <div
-            key={item.id}
-            className="flex items-center justify-between gap-3 rounded-[1.3rem] border border-white/10 bg-white/5 px-3 py-3"
-          >
-            <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#e4572e] text-xs font-semibold text-white">
-                {index + 1}
+      <div className="space-y-2.5">
+        {demoLeaderboard.map((item, index) => {
+          const isGold = index === 0;
+          const isSilver = index === 1;
+          const isBronze = index === 2;
+
+          return (
+            <div
+              key={item.id}
+              className={`flex items-center justify-between gap-3 rounded-[1.3rem] border px-3.5 py-3 transition-all duration-200 ${
+                isGold
+                  ? "border-[#e4572e]/50 bg-gradient-to-r from-[#e4572e]/15 to-transparent text-white"
+                  : "border-white/10 bg-white/5 text-white/90 hover:bg-white/10"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
+                    isGold
+                      ? "bg-[#e4572e] text-white shadow-lg"
+                      : isSilver
+                      ? "bg-white/20 text-white"
+                      : isBronze
+                      ? "bg-white/10 text-white/80"
+                      : "bg-white/5 text-white/60"
+                  }`}
+                >
+                  {index + 1}
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm font-bold text-white">{item.name}</p>
+                    <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/10 text-white/70">
+                      {item.batch}
+                    </span>
+                  </div>
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-white/50 mt-0.5">
+                    {item.activities} activities · {item.badge}
+                  </p>
+                </div>
               </div>
 
-              <div>
-                <p className="text-sm font-medium text-white">{item.name}</p>
-                <p className="text-[10px] uppercase tracking-[0.18em] text-white/50">
-                  {item.activities} activities
-                </p>
+              <div className="flex items-center gap-1.5 text-sm font-bold text-[#f5f4ef]">
+                <Crown size={14} className={isGold ? "text-[#e4572e]" : "text-white/40"} />
+                <span>{item.points} pts</span>
               </div>
             </div>
+          );
+        })}
+      </div>
 
-            <div className="flex items-center gap-2 text-sm font-medium text-[#f5f4ef]">
-              <Crown size={14} className="text-[#e4572e]" />
-              {item.points}
-            </div>
-          </div>
-        ))}
+      <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] text-white/50">
+        <span className="flex items-center gap-1">
+          <Sparkles size={12} className="text-[#e4572e]" /> Updated weekly by SAIT Verification Board
+        </span>
+        <span className="font-mono">[ CUSAT IT ]</span>
       </div>
     </section>
   );

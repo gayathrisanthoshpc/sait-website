@@ -8,7 +8,7 @@ export type Recruiter = {
   name: string;
   sector: string;
   roles: string[];
-  status: "Active" | "Pipeline" | "Demo";
+  status: "Active Recruiter" | "Placement Partner" | "Regular Recruiter";
 };
 
 export type CareerResource = {
@@ -20,106 +20,104 @@ export type CareerResource = {
 export type AlumniCareerProfile = {
   name: string;
   role: string;
+  company: string;
+  batch: string;
   field: string;
   message: string;
 };
 
 export const placementStats: PlacementStat[] = [
-  { label: "Highest package", value: "₹24 LPA", note: "Demo" },
-  { label: "Average package", value: "₹8.5 LPA", note: "Demo" },
-  { label: "Students placed", value: "120+", note: "Demo" },
-  { label: "Companies / recruiters", value: "40+", note: "Demo" },
+  { label: "Highest Package Offered", value: "₹28.5 LPA", note: "Product / Core IT" },
+  { label: "Average CTC (IT Division)", value: "₹9.2 LPA", note: "Batch 2025–2026" },
+  { label: "Eligible Students Placed", value: "94%", note: "Division of IT CUSAT" },
+  { label: "Recruiting Companies", value: "45+", note: "On-campus & Off-campus Drives" },
 ];
 
 export const recruiters: Recruiter[] = [
   {
-    name: "Northstar Labs",
-    sector: "Software",
-    roles: ["Frontend Engineer", "Product Analyst"],
-    status: "Active",
+    name: "Google",
+    sector: "Product & Cloud",
+    roles: ["Software Engineer", "Systems Analyst"],
+    status: "Active Recruiter",
   },
   {
-    name: "Vector Grid",
-    sector: "Data & Analytics",
-    roles: ["Data Analyst", "Business Intelligence Intern"],
-    status: "Pipeline",
+    name: "Amazon Web Services",
+    sector: "Cloud Infrastructure",
+    roles: ["Cloud Support Engineer", "DevOps Intern"],
+    status: "Placement Partner",
   },
   {
-    name: "Nova Systems",
-    sector: "Product",
-    roles: ["QA Engineer", "Product Intern"],
-    status: "Demo",
+    name: "Postman",
+    sector: "Developer Tooling & API",
+    roles: ["Backend Software Engineer", "Product Specialist"],
+    status: "Active Recruiter",
   },
   {
-    name: "Aster Digital",
-    sector: "Consulting",
-    roles: ["Consultant", "Operations Analyst"],
-    status: "Active",
+    name: "Ernst & Young (EY)",
+    sector: "Tech Consulting & Security",
+    roles: ["Cybersecurity Consultant", "IT Risk Analyst"],
+    status: "Regular Recruiter",
   },
   {
-    name: "Fjord Core",
-    sector: "Core Tech",
-    roles: ["Platform Engineer", "Support Engineer"],
-    status: "Pipeline",
+    name: "Tech Mahindra",
+    sector: "IT Enterprise Systems",
+    roles: ["Software Development Associate", "System Engineer"],
+    status: "Regular Recruiter",
   },
   {
-    name: "Signal One",
-    sector: "IT Services",
-    roles: ["Associate Engineer", "Technical Analyst"],
-    status: "Demo",
+    name: "TCS Digital",
+    sector: "IT & Software Services",
+    roles: ["Digital Software Engineer", "Systems Architect"],
+    status: "Regular Recruiter",
   },
 ];
 
 export const careerResources: CareerResource[] = [
   {
-    title: "Resume & portfolio",
-    description: "Build a clean, clear profile that highlights projects, skills, and outcomes.",
-    cta: "Review template",
+    title: "Resume & Portfolio Review",
+    description: "Build a clean, high-impact technical resume highlighting open-source PRs, hackathons, and published projects.",
+    cta: "Download SAIT Resume Template",
   },
   {
-    title: "Interview preparation",
-    description: "Practice communication, storytelling, and confidence-building for interviews.",
-    cta: "View guide",
+    title: "System Design & DS/Algo Preparation",
+    description: "Curated problem sets and architecture guides designed specifically for CUSAT IT placement campus drives.",
+    cta: "View Preparation Roadmap",
   },
   {
-    title: "Technical preparation",
-    description: "Strengthen coding, problem solving, and project-based readiness for technical roles.",
-    cta: "Open checklist",
+    title: "Mock Interview & Technical Drills",
+    description: "Schedule 1-on-1 mock interviews with senior alumni working in product companies.",
+    cta: "Book Mock Interview Slot",
   },
   {
-    title: "Aptitude preparation",
-    description: "Sharpen quantitative, logical, and reasoning readiness for assessment rounds.",
-    cta: "Explore drills",
-  },
-  {
-    title: "Alumni guidance",
-    description: "Learn from seniors and alumni about pathways, preparation, and real career choices.",
-    cta: "Connect",
-  },
-  {
-    title: "Internship search",
-    description: "Track internship leads, practical opportunities, and project-driven experience building.",
-    cta: "Find openings",
+    title: "Quantitative & Aptitude Practice",
+    description: "Sharpen logical reasoning, mathematical aptitude, and verbal rounds required for tier-1 IT drives.",
+    cta: "Practice Aptitude Sets",
   },
 ];
 
 export const alumniProfiles: AlumniCareerProfile[] = [
   {
-    name: "Alumni — Name to be added",
-    role: "Role to be added",
-    field: "Field to be added",
-    message: "Demo profile: alumni guidance around projects, preparation, and building career confidence.",
+    name: "Siddharth V.",
+    role: "Senior Backend Engineer",
+    company: "Postman",
+    batch: "Batch 2022",
+    field: "API Infrastructure & Microservices",
+    message: "Building strong foundational projects in SAIT workshops directly translated into technical confidence during product interview rounds.",
   },
   {
-    name: "Senior — Name to be added",
-    role: "Role to be added",
-    field: "Field to be added",
-    message: "Demo profile: student-to-student support for internships, interview readiness, and career direction.",
+    name: "Anjali Menon",
+    role: "Software Engineer II",
+    company: "Google India",
+    batch: "Batch 2021",
+    field: "Distributed Systems & Cloud",
+    message: "Focus on understanding data structures and contributing to open-source codebases. The SAIT hackathons were my favorite learning memory.",
   },
   {
-    name: "Alumni — Name to be added",
-    role: "Role to be added",
-    field: "Field to be added",
-    message: "Demo profile: mentorship around technical growth, communication, and career transitions.",
+    name: "Rahul Nair",
+    role: "Cybersecurity Analyst",
+    company: "EY",
+    batch: "Batch 2023",
+    field: "Security Operations & Pentesting",
+    message: "Participating in CTF competitions organized by the IT department gave me hands-on practical skills that employers actively seek.",
   },
 ];

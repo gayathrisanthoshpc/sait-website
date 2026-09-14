@@ -20,6 +20,15 @@ export type EventItem = {
   outcome?: string;
   year?: string;
   isDemo?: boolean;
+  speaker?: {
+    name: string;
+    role: string;
+    company: string;
+  };
+  capacity?: {
+    filled: number;
+    total: number;
+  };
 };
 
 export const eventCategories: EventCategory[] = [
@@ -33,120 +42,155 @@ export const eventCategories: EventCategory[] = [
 
 export const events: EventItem[] = [
   {
-    id: "demo-1",
-    name: "Mock Event: Design Thinking Workshop",
+    id: "event-1",
+    name: "SAIT HackIT 2026: 24-Hour Hackathon",
+    category: "Competition",
+    date: "September 28, 2026",
+    time: "9:00 AM – Next Day 9:00 AM",
+    venue: "Main IT Labs, SOE CUSAT",
+    description:
+      "The flagship annual code sprint of SAIT. Build innovative AI, Web3, and Systems solutions for real-world campus & industrial challenges.",
+    featured: true,
+    registrationLabel: "Register Now",
+    speaker: {
+      name: "Er. Rahul Nair",
+      role: "Staff Coordinator & Lead Systems Architect",
+      company: "SOE CUSAT / Tech Mahindra",
+    },
+    capacity: {
+      filled: 42,
+      total: 60,
+    },
+  },
+  {
+    id: "event-2",
+    name: "Full Stack System Architecture & Microservices",
     category: "Workshop",
-    date: "September 18, 2026",
-    time: "4:00 PM – 6:00 PM",
+    date: "October 05, 2026",
+    time: "2:00 PM – 5:30 PM",
     venue: "Department Seminar Hall",
     description:
-      "Demo/mock workshop designed to explore problem framing, creativity, and early-stage prototyping for student projects.",
+      "Hands-on workshop on scalable backend design, GraphQL APIs, Docker containers, and Next.js App Router deployment patterns.",
     featured: true,
-    registrationLabel: "Register – demo",
-    isDemo: true,
+    registrationLabel: "Reserve Seat",
+    speaker: {
+      name: "Siddharth V.",
+      role: "Senior Backend Engineer (Alumni 2022)",
+      company: "Postman",
+    },
+    capacity: {
+      filled: 38,
+      total: 50,
+    },
   },
   {
-    id: "demo-2",
-    name: "Mock Event: Industry & Career Seminar",
+    id: "event-3",
+    name: "Career Pathways & FAANG Placement Strategy",
     category: "Seminar",
-    date: "September 22, 2026",
-    time: "2:00 PM – 4:00 PM",
+    date: "October 12, 2026",
+    time: "3:00 PM – 5:00 PM",
     venue: "IT Auditorium",
     description:
-      "Demo/mock seminar focused on career outlook, student preparation, and understanding how IT pathways connect with broader industry learning.",
+      "Interactive session with alumni engineers from Google and Amazon on cracking technical interviews, system design rounds, and resume building.",
     featured: false,
-    registrationLabel: "Details – demo",
-    isDemo: true,
+    registrationLabel: "Register",
+    speaker: {
+      name: "Anjali Menon",
+      role: "Software Engineer II (Alumni 2021)",
+      company: "Google India",
+    },
+    capacity: {
+      filled: 75,
+      total: 80,
+    },
   },
   {
-    id: "demo-3",
-    name: "Mock Event: Build-a-Bot Challenge",
-    category: "Competition",
-    date: "October 05, 2026",
-    time: "10:00 AM – 2:00 PM",
-    venue: "Innovation Lab",
-    description:
-      "Demo/mock competition encouraging technical creativity, teamwork, and rapid prototyping in a collaborative student setting.",
-    registrationLabel: "Join – demo",
-    featured: true,
-    isDemo: true,
-  },
-  {
-    id: "demo-4",
-    name: "Mock Event: Web Culture Night",
-    category: "Cultural",
-    date: "October 12, 2026",
-    time: "6:00 PM – 8:00 PM",
-    venue: "College Open Stage",
-    description:
-      "Demo/mock cultural gathering bringing together creativity, expression, and community-building through performances and student participation.",
-    registrationLabel: "Reserve – demo",
-    isDemo: true,
-  },
-  {
-    id: "demo-5",
-    name: "Mock Event: Community Tech Meet",
-    category: "Community",
-    date: "October 20, 2026",
-    time: "5:30 PM – 7:30 PM",
-    venue: "Main Building Lobby",
-    description:
-      "Demo/mock community event focused on information sharing, student interaction, and hands-on conversations around projects and learning.",
-    registrationLabel: "Attend – demo",
-    isDemo: true,
-  },
-  {
-    id: "demo-6",
-    name: "Mock Event: Open Source Lab Session",
+    id: "event-4",
+    name: "Open Source Contribution Sprint & Git Deep-Dive",
     category: "Technical",
-    date: "November 02, 2026",
-    time: "3:00 PM – 5:00 PM",
-    venue: "Computer Lab",
+    date: "October 18, 2026",
+    time: "10:00 AM – 1:00 PM",
+    venue: "Software Engineering Lab",
     description:
-      "Demo/mock technical session on collaborative coding practices, open projects, and learning through experimentation.",
-    registrationLabel: "Register – demo",
-    isDemo: true,
+      "Learn Git internals, pull request workflows, and submit your first PRs to major open-source repositories under mentor guidance.",
+    registrationLabel: "Join Workshop",
+    capacity: {
+      filled: 28,
+      total: 40,
+    },
   },
   {
-    id: "past-demo-1",
-    name: "SAIT Creative Writing Circle",
-    category: "Community",
-    date: "April 2026",
-    time: "Evening session",
-    venue: "Department space",
+    id: "event-5",
+    name: "SAIT Tech & Cultural Night 2026",
+    category: "Cultural",
+    date: "November 04, 2026",
+    time: "5:00 PM – 9:00 PM",
+    venue: "SOE Open Air Theatre",
     description:
-      "A student-led session encouraging reflection, writing, and community storytelling across the department.",
+      "Annual department celebration featuring live music, student creative showcases, magazine releases, and alumni networking.",
+    registrationLabel: "Reserve Pass",
+    capacity: {
+      filled: 120,
+      total: 200,
+    },
+  },
+  {
+    id: "event-6",
+    name: "AI & Large Language Models Hands-on Lab",
+    category: "Workshop",
+    date: "November 14, 2026",
+    time: "1:30 PM – 4:30 PM",
+    venue: "AI & High Performance Computing Lab",
+    description:
+      "Building production RAG pipelines, fine-tuning open-weights models, and deploying AI agent applications with Python & PyTorch.",
+    registrationLabel: "Register",
+    speaker: {
+      name: "Dr. Binsu C. Kovoor",
+      role: "Professor & AI Research Head",
+      company: "Division of IT, CUSAT",
+    },
+    capacity: {
+      filled: 30,
+      total: 35,
+    },
+  },
+  {
+    id: "past-1",
+    name: "Cybersecurity & Ethical Hacking Symposium",
+    category: "Technical",
+    date: "May 2026",
+    time: "Full Day",
+    venue: "IT Auditorium",
+    description:
+      "CTF competition and live pentesting demonstrations covering web vulnerabilities, network analysis, and binary exploitation.",
     isPast: true,
     year: "2026",
-    outcome: "Encouraged stronger student participation and creative expression.",
-    isDemo: true,
+    outcome: "Over 120 students participated; top 3 teams won cash prizes.",
   },
   {
-    id: "past-demo-2",
-    name: "Department Project Showcase",
-    category: "Technical",
+    id: "past-2",
+    name: "Annual IT Department Magazine Release",
+    category: "Cultural",
     date: "March 2026",
-    time: "Afternoon showcase",
-    venue: "Department venue",
+    time: "Afternoon",
+    venue: "Department Seminar Hall",
     description:
-      "A collaborative project display highlighting student work, technical exploration, and practical learning outcomes.",
+      "Official launch of the annual student-compiled IT Magazine showcasing technical research papers, student art, poems, and stories.",
     isPast: true,
     year: "2026",
-    outcome: "Showcased student work and strengthened peer learning.",
-    isDemo: true,
+    outcome: "Published 200+ physical copies and digital edition.",
   },
   {
-    id: "past-demo-3",
-    name: "Magazine Release Session",
-    category: "Cultural",
+    id: "past-3",
+    name: "Alumni Knowledge Exchange & Mentorship",
+    category: "Community",
     date: "February 2026",
-    time: "Afternoon session",
-    venue: "Department hall",
+    time: "Evening Session",
+    venue: "Virtual & Seminar Hall",
     description:
-      "A reading and display session featuring student writing, poems, drawings, and technical contributions.",
+      "One-on-one resume reviews, mock interviews, and career roadmaps with 15+ IT department alumni.",
     isPast: true,
     year: "2026",
-    outcome: "Created a visible record of student creativity and department culture.",
-    isDemo: true,
+    outcome: "Helped 80+ final year students prepare for campus placement drives.",
   },
 ];

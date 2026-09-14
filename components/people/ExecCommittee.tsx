@@ -11,7 +11,7 @@ export default function ExecCommittee() {
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-12 max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
-            Executive committee
+            Executive Committee 2026–2027
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
             The people guiding SAIT.
@@ -31,8 +31,12 @@ export default function ExecCommittee() {
                 name={member.name}
                 role={member.role}
                 year={member.year}
+                initials={member.initials}
+                bio={member.bio}
                 photo={member.photo}
                 socialUrl={member.socialUrl}
+                githubUrl={member.githubUrl}
+                linkedinUrl={member.linkedinUrl}
               />
             </motion.div>
           ))}

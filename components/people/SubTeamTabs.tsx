@@ -14,7 +14,7 @@ export default function SubTeamTabs() {
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
-            Sub-teams
+            Sub-teams & Working Groups
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
             The teams behind the work.
@@ -35,13 +35,13 @@ export default function SubTeamTabs() {
                 aria-controls={`panel-${team}`}
                 tabIndex={isActive ? 0 : -1}
                 onClick={() => setActiveTab(team)}
-                className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-200 ${
                   isActive
-                    ? "border-[#111111] bg-[#111111] text-white"
-                    : "border-black/10 bg-white/30 text-[#111111] hover:border-black/20"
+                    ? "border-[#111111] bg-[#111111] text-white shadow-md"
+                    : "border-black/10 bg-white/30 text-[#111111] hover:border-black/20 hover:bg-white"
                 }`}
               >
-                {team}
+                {team} Team ({subTeams[team].length})
               </button>
             );
           })}
@@ -64,8 +64,12 @@ export default function SubTeamTabs() {
                   key={member.id}
                   name={member.name}
                   role={member.role}
+                  initials={member.initials}
+                  bio={member.bio}
                   photo={member.photo}
                   socialUrl={member.socialUrl}
+                  githubUrl={member.githubUrl}
+                  linkedinUrl={member.linkedinUrl}
                 />
               ))}
             </div>
