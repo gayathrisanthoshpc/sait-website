@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f4ef;
+  --foreground: #111111;
+  --accent: #e4572e;
+  --muted: #6b6b67;
+  --border: rgba(17, 17, 17, 0.12);
 }
 
 @theme inline {
@@ -12,15 +15,75 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@layer components {
+  .saint-button-primary {
+    @apply inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111];
+  }
+
+  .saint-button-secondary {
+    @apply inline-flex items-center justify-center gap-3 rounded-full border border-black/15 bg-transparent px-5 py-3 text-sm font-medium text-[#111111] transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111];
+  }
+
+  .saint-card {
+    @apply rounded-[2rem] border border-black/10 bg-white/30 p-5 md:p-6;
+  }
+
+  .saint-panel {
+    @apply rounded-[2rem] border border-black/10 bg-white/30;
+  }
+
+  .saint-eyebrow {
+    @apply text-[10px] font-medium uppercase tracking-[0.22em] text-black/45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
