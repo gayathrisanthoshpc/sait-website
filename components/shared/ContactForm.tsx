@@ -59,10 +59,6 @@ export default function ContactForm() {
             Reach out to the community.
           </h3>
         </div>
-
-        <span className="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-white/70">
-          Demo form
-        </span>
       </div>
 
       <form onSubmit={handleSubmit} className="mt-8 grid gap-4 md:grid-cols-2" noValidate>
