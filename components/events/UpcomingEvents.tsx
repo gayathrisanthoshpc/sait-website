@@ -1,7 +1,8 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
 
 import EventCard from "@/components/events/EventCard";
 import EventFilterBar from "@/components/events/EventFilterBar";
@@ -20,11 +21,11 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [activeModalEvent, setActiveModalEvent] = useState<EventData | null>(null);
 
+  const featuredEvent = useMemo(() => events.find((event) => event.featured), [events]);
+
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
-      const matchesCategory =
-        selectedCategory === "All" || event.category === selectedCategory;
-
+      const matchesCategory = selectedCategory === "All" || event.category === selectedCategory;
       const searchValue = searchTerm.trim().toLowerCase();
       const matchesSearch =
         searchValue.length === 0 ||
@@ -41,59 +42,122 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
   };
 
   return (
-    <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+    <section className="bg-[#F7F3EB] px-6 py-12 md:px-10 md:py-20">
       <div className="mx-auto max-w-[1440px]">
-        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+        >
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1F2A44]/50">
               Upcoming events & workshops
             </p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
+            <h2 className="mt-3 text-4xl font-semibold tracking-[-0.05em] text-[#1F2A44] md:text-6xl">
               Find what fits your week.
             </h2>
           </div>
-        </div>
+        </motion.div>
 
-        <EventFilterBar
-          selectedCategory={selectedCategory}
-          searchTerm={searchTerm}
-          onSelectCategory={setSelectedCategory}
-          onSearchChange={setSearchTerm}
-          onClearFilters={clearFilters}
-        />
-
-        {filteredEvents.length === 0 ? (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-10 rounded-[2rem] border border-dashed border-black/15 bg-white/30 p-10 text-center"
+        {featuredEvent ? (
+          <motion.article
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+            className="mb-8 rounded-[2rem] border border-[#1F2A44]/10 bg-[#1F2A44] p-6 text-[#F7F3EB] md:p-8"
           >
-            <p className="text-2xl font-medium tracking-tight">No events found</p>
-            <p className="mt-3 text-black/60">Try adjusting your filters or search term.</p>
-            <button
-              type="button"
-              onClick={clearFilters}
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-[#111111] px-5 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-[#e4572e]"
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C6A75E]">
+                  Flagship moment
+                </p>
+                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.05em] md:text-5xl">
+                  {featuredEvent.name}
+                </h3>
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#F7F3EB]/75">
+                  {featuredEvent.description}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#F7F3EB]/70">
+                <span>{featuredEvent.date}</span>
+                <span className="text-[#C6A75E]">•</span>
+                <span>{featuredEvent.time}</span>
+                <span className="text-[#C6A75E]">•</span>
+                <span>{featuredEvent.venue}</span>
+              </div>
+            </div>
+          </motion.article>
+        ) : null}
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <EventFilterBar
+            selectedCategory={selectedCategory}
+            searchTerm={searchTerm}
+            onSelectCategory={setSelectedCategory}
+            onSearchChange={setSearchTerm}
+            onClearFilters={clearFilters}
+          />
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          {filteredEvents.length === 0 ? (
+            <motion.div
+              key="empty-state"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="mt-8 rounded-[2rem] border border-dashed border-[#1F2A44]/15 bg-white/60 p-10 text-center"
             >
-              Clear filters
-            </button>
-          </motion.div>
-        ) : (
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            {filteredEvents.map((event) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                expanded={expandedId === event.id}
-                onToggle={(id) => setExpandedId((current) => (current === id ? null : id))}
-                onRegister={(item) => setActiveModalEvent(item as EventData)}
-              />
-            ))}
-          </div>
-        )}
+              <p className="text-2xl font-semibold tracking-[-0.05em] text-[#1F2A44]">No events found</p>
+              <p className="mt-3 text-[#1F2A44]/65">Try another category.</p>
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1F2A44] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition-colors duration-200 hover:bg-[#C6A75E]"
+              >
+                Reset filters
+                <ArrowRight size={14} />
+              </button>
+            </motion.div>
+          ) : (
+            <motion.div
+              key={`${selectedCategory}-${searchTerm}`}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="mt-8 space-y-4"
+            >
+              {filteredEvents.map((event, index) => (
+                <motion.div
+                  key={event.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.05 }}
+                >
+                  <EventCard
+                    event={event}
+                    expanded={expandedId === event.id}
+                    onToggle={(id) => setExpandedId((current) => (current === id ? null : id))}
+                    onRegister={(item) => setActiveModalEvent(item as EventData)}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Interactive RSVP Registration Modal */}
       <EventModal
         event={activeModalEvent}
         isOpen={Boolean(activeModalEvent)}

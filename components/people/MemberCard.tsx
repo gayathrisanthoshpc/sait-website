@@ -40,7 +40,7 @@ export default function MemberCard({
         {/* Avatar Circle with Initials */}
         <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#111111] text-[#f5f4ef] font-bold text-base border-2 border-white shadow-md transition-transform duration-300 group-hover:scale-105">
           <span>{displayInitials}</span>
-          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-[#e4572e]" />
+          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-[#C6A75E]" />
         </div>
 
         {/* Action Buttons */}
@@ -61,7 +61,7 @@ export default function MemberCard({
 
       <div className="mt-4">
         <h3 className="text-xl font-bold tracking-tight text-[#111111]">{name}</h3>
-        <p className="mt-1 text-xs font-semibold text-[#e4572e]">{role}</p>
+        <p className="mt-1 text-xs font-semibold text-[#C6A75E]">{role}</p>
         {year ? (
           <p className="mt-1 text-[10px] uppercase font-mono tracking-[0.16em] text-black/50">
             {year}

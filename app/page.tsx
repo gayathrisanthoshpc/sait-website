@@ -75,7 +75,7 @@ export default function Home() {
 
       <section
         id="events"
-        className="border-b border-black/10 bg-[#111111] px-6 py-20 text-white md:px-10 md:py-28"
+        className="border-b border-black/10 bg-[#1F2A44] px-6 py-20 text-white md:px-10 md:py-28"
       >
         <div className="mx-auto max-w-[1440px]">
           <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
@@ -85,7 +85,7 @@ export default function Home() {
               </p>
 
               <h2 className="text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
-                Events<span className="text-[#e4572e]">.</span>
+                Events<span className="text-[#C6A75E]">.</span>
               </h2>
             </div>
 
@@ -128,7 +128,7 @@ export default function Home() {
             <div className="flex items-end justify-start md:justify-end">
               <Link
                 href="/events"
-                className="inline-flex items-center gap-3 rounded-full bg-[#e4572e] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f26a42]"
+                className="inline-flex items-center gap-3 rounded-full bg-[#C6A75E] px-5 py-3 text-sm font-medium text-[#1F2A44] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E8DCC8]"
               >
                 Register / Details
                 <ArrowRight size={16} />
@@ -149,7 +149,7 @@ export default function Home() {
 
           <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-stretch">
             <div className="rounded-[2rem] border border-black/10 bg-white/30 p-6 md:p-8">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#e4572e] text-white">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#1F2A44] text-[#F7F3EB]">
                 <BookText size={20} />
               </div>
 
@@ -179,7 +179,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1440px] gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-end">
           <div>
             <p className="saint-eyebrow">04 — My SAIT journey</p>
-            <div className="mt-8 flex h-12 w-12 items-center justify-center rounded-full bg-[#e4572e] text-white">
+            <div className="mt-8 flex h-12 w-12 items-center justify-center rounded-full bg-[#1F2A44] text-[#F7F3EB]">
               <Sparkles size={20} />
             </div>
           </div>

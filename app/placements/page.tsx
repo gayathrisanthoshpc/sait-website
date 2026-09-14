@@ -56,7 +56,7 @@ export default function PlacementsPage() {
 
             <div className="flex justify-start md:justify-end">
               <div className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/30 px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] text-black/60">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#e4572e]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#C6A75E]" />
                 DEMO DATA
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function PlacementsPage() {
                 key={step.title}
                 className="rounded-[2rem] border border-black/10 bg-white/30 p-5"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#e4572e] text-sm font-semibold text-white">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#C6A75E] text-sm font-semibold text-white">
                   {index + 1}
                 </div>
                 <h3 className="text-2xl font-medium tracking-tight text-[#111111]">
@@ -137,7 +137,7 @@ export default function PlacementsPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/alumni"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e]"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
               >
                 Explore Alumni
                 <ArrowRight size={16} />

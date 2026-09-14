@@ -133,7 +133,7 @@ export default function ActivityLoggerPage() {
             </div>
 
             <div className="mt-5 h-3 overflow-hidden rounded-full bg-white/10">
-              <div className="h-full w-[68%] rounded-full bg-[#e4572e]" />
+              <div className="h-full w-[68%] rounded-full bg-[#C6A75E]" />
             </div>
           </div>
         </div>
@@ -220,7 +220,7 @@ export default function ActivityLoggerPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="/events"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e]"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
               >
                 Explore Events
                 <ArrowRight size={16} />

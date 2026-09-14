@@ -24,7 +24,7 @@ export default function AnnouncementCard({ item, onToggleRead }: AnnouncementCar
         </div>
 
         {!item.read && (
-          <span className="flex h-3 w-3 items-center justify-center rounded-full bg-[#e4572e]" aria-label="Unread announcement" />
+          <span className="flex h-3 w-3 items-center justify-center rounded-full bg-[#C6A75E]" aria-label="Unread announcement" />
         )}
       </div>
 
@@ -36,8 +36,8 @@ export default function AnnouncementCard({ item, onToggleRead }: AnnouncementCar
       <p className="mt-5 text-base leading-relaxed text-black/70">{item.description}</p>
 
       {item.deadline ? (
-        <div className="mt-5 flex items-center gap-3 rounded-[1.3rem] border border-[#e4572e]/20 bg-[#fff4ee] p-3">
-          <CalendarClock size={16} className="text-[#e4572e]" />
+        <div className="mt-5 flex items-center gap-3 rounded-[1.3rem] border border-[#C6A75E]/20 bg-[#fff4ee] p-3">
+          <CalendarClock size={16} className="text-[#C6A75E]" />
           <p className="text-sm text-black/75">
             Deadline: <span className="font-medium text-[#111111]">{item.deadline}</span>
           </p>

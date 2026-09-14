@@ -8,12 +8,12 @@ export default function Leaderboard() {
     <section className="rounded-[2rem] border border-black/10 bg-[#111111] p-5 text-white md:p-6 shadow-xl">
       <div className="mb-5 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <Trophy size={18} className="text-[#e4572e]" />
+          <Trophy size={18} className="text-[#C6A75E]" />
           <h3 className="text-xl font-bold tracking-tight text-white">
             Top Contributor Leaderboard
           </h3>
         </div>
-        <span className="rounded-full border border-[#e4572e]/40 bg-[#e4572e]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f7c7b9]">
+        <span className="rounded-full border border-[#C6A75E]/40 bg-[#C6A75E]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f7c7b9]">
           S5 / S7 BATCH
         </span>
       </div>
@@ -29,7 +29,7 @@ export default function Leaderboard() {
               key={item.id}
               className={`flex items-center justify-between gap-3 rounded-[1.3rem] border px-3.5 py-3 transition-all duration-200 ${
                 isGold
-                  ? "border-[#e4572e]/50 bg-gradient-to-r from-[#e4572e]/15 to-transparent text-white"
+                  ? "border-[#C6A75E]/50 bg-gradient-to-r from-[#C6A75E]/15 to-transparent text-white"
                   : "border-white/10 bg-white/5 text-white/90 hover:bg-white/10"
               }`}
             >
@@ -37,7 +37,7 @@ export default function Leaderboard() {
                 <div
                   className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
                     isGold
-                      ? "bg-[#e4572e] text-white shadow-lg"
+                      ? "bg-[#C6A75E] text-white shadow-lg"
                       : isSilver
                       ? "bg-white/20 text-white"
                       : isBronze
@@ -62,7 +62,7 @@ export default function Leaderboard() {
               </div>
 
               <div className="flex items-center gap-1.5 text-sm font-bold text-[#f5f4ef]">
-                <Crown size={14} className={isGold ? "text-[#e4572e]" : "text-white/40"} />
+                <Crown size={14} className={isGold ? "text-[#C6A75E]" : "text-white/40"} />
                 <span>{item.points} pts</span>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function Leaderboard() {
 
       <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] text-white/50">
         <span className="flex items-center gap-1">
-          <Sparkles size={12} className="text-[#e4572e]" /> Updated weekly by SAIT Verification Board
+          <Sparkles size={12} className="text-[#C6A75E]" /> Updated weekly by SAIT Verification Board
         </span>
         <span className="font-mono">[ CUSAT IT ]</span>
       </div>

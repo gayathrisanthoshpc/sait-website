@@ -1,6 +1,5 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 import type { EventItem } from "@/data/events";
@@ -10,74 +9,76 @@ type PastEventsArchiveProps = {
 };
 
 export default function PastEventsArchive({ events }: PastEventsArchiveProps) {
-  const [selectedYear, setSelectedYear] = useState<string>("All");
+  const byYear = events.reduce<Record<string, EventItem[]>>((acc, event) => {
+    const year = event.year ?? "Unknown";
+    acc[year] = [...(acc[year] ?? []), event];
+    return acc;
+  }, {});
 
-  const years = useMemo(() => {
-    return ["All", ...new Set(events.map((event) => event.year ?? "Unknown"))];
-  }, [events]);
-
-  const filteredEvents = useMemo(() => {
-    return selectedYear === "All"
-      ? events
-      : events.filter((event) => event.year === selectedYear);
-  }, [events, selectedYear]);
+  const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 
   return (
-    <section className="px-6 py-20 md:px-10 md:py-28">
+    <section className="px-6 py-12 md:px-10 md:py-20">
       <div className="mx-auto max-w-[1440px]">
-        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
-              Past events archive
-            </p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
-              A record of SAIT activity.
-            </h2>
-          </div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="mb-10 max-w-3xl"
+        >
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1F2A44]/50">
+            Past events archive
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-[#1F2A44] md:text-6xl">
+            A record of SAIT activity.
+          </h2>
+        </motion.div>
 
-          <div className="flex flex-wrap gap-2">
-            {years.map((year) => (
-              <button
-                key={year}
-                type="button"
-                aria-pressed={selectedYear === year}
-                onClick={() => setSelectedYear(year)}
-                className={`rounded-full border px-3 py-2 text-xs font-medium uppercase tracking-[0.14em] transition-all duration-200 ${
-                  selectedYear === year
-                    ? "border-[#111111] bg-[#111111] text-white"
-                    : "border-black/10 bg-white/30 text-[#111111] hover:border-black/20"
-                }`}
-              >
-                {year}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          {filteredEvents.map((event, index) => (
-            <motion.article
-              key={event.id}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.3, delay: index * 0.04 }}
-              className="grid gap-4 rounded-[2rem] border border-black/10 bg-white/30 p-5 md:grid-cols-[160px_1fr_1fr] md:items-center md:p-6"
-            >
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.18em] text-black/45">{event.year ?? "Year"}</p>
-                <p className="mt-2 text-xl font-medium tracking-tight text-[#111111]">{event.date}</p>
+        <div className="space-y-10">
+          {years.map((year) => (
+            <div key={year}>
+              <div className="mb-5 flex items-center gap-4">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1F2A44]/50">
+                  {year}
+                </span>
+                <div className="h-px flex-1 bg-[#1F2A44]/10" />
               </div>
 
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.18em] text-black/45">{event.category}</p>
-                <h3 className="mt-2 text-2xl font-medium tracking-tight text-[#111111]">{event.name}</h3>
-              </div>
+              <div className="space-y-4">
+                {byYear[year].map((event, index) => (
+                  <motion.article
+                    key={event.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: index * 0.04, ease: "easeOut" }}
+                    className="group border-b border-[#1F2A44]/10 pb-4 pt-1 last:border-b-0"
+                  >
+                    <div className="grid gap-4 md:grid-cols-[210px_1fr] md:items-start">
+                      <div className="flex items-start gap-3 md:block">
+                        <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-[#C6A75E]" aria-hidden="true" />
+                        <div>
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#667085]">
+                            {event.category}
+                          </p>
+                          <p className="mt-2 text-xl font-medium tracking-[-0.04em] text-[#1F2A44] md:text-2xl">
+                            {event.date}
+                          </p>
+                        </div>
+                      </div>
 
-              <div>
-                <p className="text-sm leading-relaxed text-black/65">{event.outcome ?? event.description}</p>
+                      <div className="space-y-2">
+                        <h3 className="text-2xl font-semibold tracking-[-0.04em] text-[#1F2A44] transition-colors duration-300 group-hover:text-[#1F2A44]">
+                          {event.name}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-[#1F2A44]/70">{event.outcome ?? event.description}</p>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
               </div>
-            </motion.article>
+            </div>
           ))}
         </div>
       </div>

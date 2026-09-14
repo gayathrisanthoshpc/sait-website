@@ -1,7 +1,7 @@
 "use client";
 
-import { CalendarDays, MapPin, Clock3, ArrowRight, UserCheck } from "lucide-react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, CalendarDays, Clock3, MapPin, UserCheck } from "lucide-react";
 
 import type { EventItem } from "@/data/events";
 
@@ -12,110 +12,125 @@ type EventCardProps = {
   onRegister?: (event: EventItem) => void;
 };
 
+function getDateParts(date: string) {
+  const match = date.match(/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/);
+
+  if (!match) {
+    return { month: "Event", day: date.slice(0, 2) || "" };
+  }
+
+  return {
+    month: match[1].slice(0, 3).toUpperCase(),
+    day: match[2],
+  };
+}
+
 export default function EventCard({ event, expanded, onToggle, onRegister }: EventCardProps) {
+  const { month, day } = getDateParts(event.date);
+
   return (
     <motion.article
       layout
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25 }}
-      className={`rounded-[2rem] border p-5 md:p-6 transition-all duration-300 hover:-translate-y-1 ${
-        event.featured
-          ? "border-[#e4572e]/40 bg-[#111111] text-white shadow-xl"
-          : "border-black/10 bg-white/30 text-[#111111] hover:border-black/20"
-      }`}
+      exit={{ opacity: 0, y: 12 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ x: 4 }}
+      className="group relative overflow-hidden rounded-[1.75rem] border border-[#1F2A44]/10 bg-[#F7F3EB] p-4 text-[#1F2A44] shadow-[0_0_0_0_rgba(0,0,0,0)] transition-all duration-300 hover:border-[#C6A75E]/60 hover:shadow-[0_12px_30px_rgba(31,42,68,0.06)] md:p-5"
     >
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <p
-            className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${
-              event.featured ? "text-[#e4572e]" : "text-black/45"
-            }`}
-          >
-            {event.category}
-          </p>
-          <h3 className="mt-2 text-2xl font-bold tracking-tight">{event.name}</h3>
-        </div>
+      <div className="absolute inset-y-0 left-0 w-[2px] bg-[#C6A75E]/0 transition-colors duration-300 group-hover:bg-[#C6A75E]" />
 
-        {event.featured ? (
-          <span className="rounded-full border border-[#e4572e]/40 bg-[#e4572e]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f7c7b9]">
-            Featured
-          </span>
-        ) : event.isPast ? (
-          <span className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-black/50">
-            Completed
-          </span>
-        ) : null}
-      </div>
-
-      <div className="mt-5 space-y-2.5 text-sm">
-        <div className="flex items-center gap-3 text-current/80">
-          <CalendarDays size={15} className="text-[#e4572e]" />
-          <span>{event.date}</span>
-        </div>
-        <div className="flex items-center gap-3 text-current/80">
-          <Clock3 size={15} className="text-[#e4572e]" />
-          <span>{event.time}</span>
-        </div>
-        <div className="flex items-center gap-3 text-current/80">
-          <MapPin size={15} className="text-[#e4572e]" />
-          <span>{event.venue}</span>
-        </div>
-      </div>
-
-      <p className={`mt-4 text-sm leading-relaxed ${event.featured ? "text-white/75" : "text-black/65"}`}>
-        {event.description}
-      </p>
-
-      {event.speaker ? (
-        <div className={`mt-4 rounded-[1.2rem] border p-3 text-xs ${event.featured ? "border-white/15 bg-white/5" : "border-black/10 bg-white/50"}`}>
-          <span className="text-[9px] uppercase tracking-[0.18em] text-current/45 block mb-0.5">Speaker</span>
-          <span className="font-semibold text-current">{event.speaker.name}</span> · <span className="text-current/60">{event.speaker.company}</span>
-        </div>
-      ) : null}
-
-      {expanded ? (
-        <div className={`mt-5 rounded-[1.25rem] border p-4 text-sm ${event.featured ? "border-white/10 bg-white/5" : "border-black/10 bg-[#f5f4ef]"}`}>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-current/50">Full event itinerary & details</p>
-          <div className="mt-3 space-y-2 text-xs">
-            <p><span className="text-current/50">Venue:</span> {event.venue}</p>
-            <p><span className="text-current/50">Category:</span> {event.category}</p>
-            <p className="leading-relaxed"><span className="text-current/50">Overview:</span> {event.description}</p>
-            {event.outcome ? <p><span className="text-current/50">Outcome:</span> {event.outcome}</p> : null}
+      <div className="grid gap-5 md:grid-cols-[128px_1fr_auto] md:items-start">
+        <div className="flex items-center gap-3 md:flex-col md:items-start">
+          <div className="min-w-[82px] rounded-[1.1rem] border border-[#1F2A44]/10 bg-white/70 p-3 text-center">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#667085]">{month}</p>
+            <p className="mt-1 text-3xl font-semibold tracking-[-0.06em] text-[#1F2A44]">{day}</p>
           </div>
-        </div>
-      ) : null}
 
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-3 pt-2">
-        <div className="flex items-center gap-2">
-          {!event.isPast && onRegister ? (
+          {event.featured ? (
+            <span className="rounded-full border border-[#C6A75E]/30 bg-[#C6A75E]/10 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#1F2A44]">
+              Featured
+            </span>
+          ) : null}
+        </div>
+
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#667085]">
+            <span>{event.category}</span>
+            <span className="h-1 w-1 rounded-full bg-[#C6A75E]" />
+            <span>{event.time}</span>
+            <span className="h-1 w-1 rounded-full bg-[#C6A75E]" />
+            <span>{event.venue}</span>
+          </div>
+
+          <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-[#1F2A44] transition-colors duration-300 group-hover:text-[#1F2A44] md:text-[2rem]">
+            {event.name}
+          </h3>
+
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#1F2A44]/70">
+            {event.description}
+          </p>
+
+          <AnimatePresence initial={false}>
+            {expanded ? (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.28, ease: "easeOut" }}
+                className="mt-4 overflow-hidden"
+              >
+                <div className="rounded-[1.15rem] border border-[#1F2A44]/10 bg-white/60 p-4">
+                  <div className="grid gap-3 text-xs text-[#1F2A44]/70 sm:grid-cols-2">
+                    <div className="flex items-center gap-2">
+                      <CalendarDays size={13} className="text-[#C6A75E]" />
+                      <span className="font-semibold uppercase tracking-[0.18em] text-[#1F2A44]/55">Date</span>
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock3 size={13} className="text-[#C6A75E]" />
+                      <span className="font-semibold uppercase tracking-[0.18em] text-[#1F2A44]/55">Time</span>
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2 sm:col-span-2">
+                      <MapPin size={13} className="text-[#C6A75E]" />
+                      <span className="font-semibold uppercase tracking-[0.18em] text-[#1F2A44]/55">Venue</span>
+                      <span>{event.venue}</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
+        </div>
+
+        <div className="flex items-center gap-3 md:flex-col md:items-end md:pt-1">
+          {onRegister ? (
             <button
               type="button"
               onClick={() => onRegister(event)}
-              className="inline-flex items-center gap-2 rounded-full bg-[#e4572e] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white transition-all duration-200 hover:bg-[#f26a42] hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1F2A44] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
             >
-              <UserCheck size={14} />
-              Register / Details
+              {event.registrationLabel || "Register"}
+              <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
             </button>
           ) : null}
 
           <button
             type="button"
             onClick={() => onToggle(event.id)}
-            className={`inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all duration-200 ${
-              event.featured
-                ? "bg-white/10 text-white hover:bg-white/20"
-                : "border border-black/15 bg-transparent text-[#111111] hover:bg-white"
-            }`}
+            className="inline-flex items-center gap-2 rounded-full border border-[#1F2A44]/10 bg-transparent px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1F2A44] transition-colors duration-200 hover:border-[#1F2A44]/20 hover:bg-white"
           >
-            {expanded ? "Less" : "Quick Info"}
-            <ArrowRight size={14} />
+            {expanded ? "Less" : "Details"}
           </button>
-        </div>
 
-        <span className={`text-[10px] font-mono uppercase tracking-[0.18em] ${event.featured ? "text-white/50" : "text-black/45"}`}>
-          {event.isPast ? "Past Event" : "Upcoming"}
-        </span>
+          {!event.isPast ? (
+            <span className="inline-flex items-center gap-2 text-[9px] font-medium uppercase tracking-[0.18em] text-[#667085]">
+              <UserCheck size={12} className="text-[#C6A75E]" />
+              Open
+            </span>
+          ) : null}
+        </div>
       </div>
     </motion.article>
   );

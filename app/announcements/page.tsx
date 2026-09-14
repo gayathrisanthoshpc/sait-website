@@ -112,7 +112,7 @@ export default function AnnouncementsPage() {
                 Status
               </p>
               <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-3 py-2 text-sm font-medium text-[#111111]">
-                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#e4572e]" aria-hidden="true" />
+                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#C6A75E]" aria-hidden="true" />
                 {featuredAnnouncement.priority} priority
               </div>
 
@@ -129,7 +129,7 @@ export default function AnnouncementsPage() {
 
               <button
                 type="button"
-                className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#111111] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+                className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#111111] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
               >
                 Read more
                 <ArrowRight size={16} />
@@ -187,7 +187,7 @@ export default function AnnouncementsPage() {
               <button
                 type="button"
                 onClick={clearFilters}
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
               >
                 Clear filters
               </button>
@@ -215,7 +215,7 @@ export default function AnnouncementsPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/events"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e]"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
               >
                 Explore Events
                 <ArrowRight size={16} />

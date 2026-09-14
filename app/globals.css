@@ -1,11 +1,32 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   SAIT Design System Tokens
+   Primary Navy · Warm Beige · Soft Gold · Off White · Deep Navy
+   ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --background: #f5f4ef;
-  --foreground: #111111;
-  --accent: #e4572e;
-  --muted: #6b6b67;
-  --border: rgba(17, 17, 17, 0.12);
+  /* Core palette */
+  --navy: #1F2A44;
+  --beige: #E8DCC8;
+  --gold: #C6A75E;
+  --off-white: #F7F3EB;
+  --deep-navy: #111827;
+  --white: #FFFFFF;
+  --muted: #667085;
+
+  --sait-navy: var(--navy);
+  --sait-beige: var(--beige);
+  --sait-gold: var(--gold);
+  --sait-off-white: var(--off-white);
+  --sait-deep-navy: var(--deep-navy);
+  --sait-white: var(--white);
+  --sait-muted: var(--muted);
+
+  /* Semantic mappings */
+  --background: var(--off-white);
+  --foreground: var(--navy);
+  --accent: var(--gold);
+  --border: rgba(31, 42, 68, 0.12);
 }
 
 @theme inline {
@@ -34,8 +55,8 @@ body {
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--sait-navy);
+  color: var(--sait-off-white);
 }
 
 a {
@@ -55,25 +76,60 @@ textarea {
   font: inherit;
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   Component Utilities — shared across all pages
+   ───────────────────────────────────────────────────────────────────────────── */
 @layer components {
+  /* Primary CTA — navy background, gold hover */
+  .sait-btn-primary {
+    @apply inline-flex items-center justify-center gap-3 rounded-full bg-[#1F2A44] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44];
+  }
+
+  /* Secondary CTA — navy border/text, fills navy on hover */
+  .sait-btn-secondary {
+    @apply inline-flex items-center justify-center gap-3 rounded-full border border-[#1F2A44]/20 bg-transparent px-5 py-3 text-sm font-medium text-[#1F2A44] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1F2A44]/40 hover:bg-[#1F2A44] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44];
+  }
+
+  /* Card — off-white with thin navy border */
+  .sait-card {
+    @apply rounded-2xl border border-[#1F2A44]/10 bg-white/60 p-5 md:p-6;
+  }
+
+  /* Panel — larger rounded card variant */
+  .sait-panel {
+    @apply rounded-2xl border border-[#1F2A44]/10 bg-white/60;
+  }
+
+  /* Eyebrow — small uppercase label with navy text */
+  .sait-eyebrow {
+    @apply text-[10px] font-semibold uppercase tracking-[0.26em] text-[#1F2A44]/50;
+  }
+
+  /* Gold rule — thin horizontal gold separator */
+  .sait-rule {
+    @apply h-px w-12 bg-[#C6A75E]/60;
+  }
+
+  /* Section heading — editorial large type in navy */
+  .sait-heading {
+    @apply text-[#1F2A44] font-semibold tracking-tight;
+  }
+
+  /* Legacy aliases for existing components (to prevent regressions) */
   .saint-button-primary {
-    @apply inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111];
+    @apply inline-flex items-center justify-center gap-3 rounded-full bg-[#1F2A44] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44];
   }
-
   .saint-button-secondary {
-    @apply inline-flex items-center justify-center gap-3 rounded-full border border-black/15 bg-transparent px-5 py-3 text-sm font-medium text-[#111111] transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111];
+    @apply inline-flex items-center justify-center gap-3 rounded-full border border-[#1F2A44]/20 bg-transparent px-5 py-3 text-sm font-medium text-[#1F2A44] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1F2A44]/40 hover:bg-[#1F2A44] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44];
   }
-
   .saint-card {
-    @apply rounded-[2rem] border border-black/10 bg-white/30 p-5 md:p-6;
+    @apply rounded-2xl border border-[#1F2A44]/10 bg-white/60 p-5 md:p-6;
   }
-
   .saint-panel {
-    @apply rounded-[2rem] border border-black/10 bg-white/30;
+    @apply rounded-2xl border border-[#1F2A44]/10 bg-white/60;
   }
-
   .saint-eyebrow {
-    @apply text-[10px] font-medium uppercase tracking-[0.22em] text-black/45;
+    @apply text-[10px] font-semibold uppercase tracking-[0.26em] text-[#1F2A44]/50;
   }
 }
 

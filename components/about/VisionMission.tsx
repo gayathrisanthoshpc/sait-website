@@ -52,7 +52,7 @@ export default function VisionMission() {
               transition={{ duration: 0.35, delay: index * 0.05 }}
               className="rounded-[2rem] border border-black/10 bg-white/30 p-6"
             >
-              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#e4572e] text-sm font-semibold text-white">
+              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#C6A75E] text-sm font-semibold text-white">
                 0{index + 1}
               </div>
 

@@ -6,7 +6,7 @@ export default function NotFound() {
     <main className="flex min-h-screen items-center justify-center bg-[#f5f4ef] px-6 py-16 text-[#111111]">
       <div className="w-full max-w-4xl rounded-[2rem] border border-black/10 bg-white/40 p-8 shadow-[0_20px_60px_rgba(17,17,17,0.06)] md:p-12">
         <div className="flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.2em] text-black/45">
-          <Compass size={14} className="text-[#e4572e]" />
+          <Compass size={14} className="text-[#C6A75E]" />
           404 — Lost in the archive
         </div>
 
@@ -22,7 +22,7 @@ export default function NotFound() {
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e]"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
           >
             Return home
             <ArrowRight size={16} />

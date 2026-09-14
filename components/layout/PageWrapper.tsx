@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 type PageWrapperProps = {
@@ -16,6 +16,8 @@ export default function PageWrapper({
   as: Component = "main",
   animate = true,
 }: PageWrapperProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   const content = (
     <div className="mx-auto w-full max-w-[1440px] px-6 md:px-10">{children}</div>
   );
@@ -30,9 +32,9 @@ export default function PageWrapper({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 18 }}
+      initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
+      transition={{ duration: shouldReduceMotion ? 0.15 : 0.55, ease: "easeOut" }}
       className={`w-full py-16 md:py-24 ${className}`.trim()}
     >
       {content}

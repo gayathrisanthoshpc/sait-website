@@ -86,7 +86,7 @@ export default function AboutPage() {
                 href={href}
                 className="group rounded-[2rem] border border-black/10 bg-white/30 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-black/20"
               >
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#e4572e] text-white">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#C6A75E] text-white">
                   <Icon size={18} />
                 </div>
 
@@ -120,7 +120,7 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/people"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e4572e]"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
               >
                 Meet the People
                 <ArrowRight size={16} />

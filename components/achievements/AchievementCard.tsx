@@ -58,7 +58,7 @@ export default function AchievementCard({ item }: AchievementCardProps) {
           className="mt-5 rounded-[1.4rem] border border-black/10 bg-[#111111] p-4 text-white"
         >
           <div className="mb-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-white/60">
-            <Sparkles size={14} className="text-[#e4572e]" />
+            <Sparkles size={14} className="text-[#C6A75E]" />
             Demo detail
           </div>
           <p className="text-sm leading-relaxed text-white/80">{item.details}</p>

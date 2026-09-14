@@ -29,7 +29,7 @@ export default function AlumniSpotlight({ alumni }: AlumniSpotlightProps) {
         >
           <div>
             <div className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-white/55">
-              <Sparkles size={14} className="text-[#e4572e]" />
+              <Sparkles size={14} className="text-[#C6A75E]" />
               {alumni.batch} graduate
             </div>
 
@@ -44,7 +44,7 @@ export default function AlumniSpotlight({ alumni }: AlumniSpotlightProps) {
             </div>
 
             <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-[#f5f4ef] p-5 text-[#111111]">
-              <div className="flex items-center gap-3 text-[#e4572e]">
+              <div className="flex items-center gap-3 text-[#C6A75E]">
                 <Quote size={18} />
                 <span className="text-[10px] font-medium uppercase tracking-[0.18em]">
                   Demo story

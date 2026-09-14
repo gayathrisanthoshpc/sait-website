@@ -78,7 +78,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
 
         {/* Category Badge */}
         <div className="flex items-center gap-2 mb-3">
-          <span className="rounded-full bg-[#e4572e]/10 border border-[#e4572e]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#e4572e]">
+          <span className="rounded-full bg-[#C6A75E]/10 border border-[#C6A75E]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C6A75E]">
             {event.category}
           </span>
           <span className="text-xs text-black/40 font-mono">[ SAIT EVENT ]</span>
@@ -92,15 +92,15 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
         {/* Quick Meta */}
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-[1.3rem] border border-black/10 bg-white/50 p-3 text-xs text-black/75">
           <div className="flex items-center gap-2">
-            <Calendar size={15} className="text-[#e4572e]" />
+            <Calendar size={15} className="text-[#C6A75E]" />
             <span>{event.date}</span>
           </div>
           <div className="flex items-center gap-2">
-            <Clock size={15} className="text-[#e4572e]" />
+            <Clock size={15} className="text-[#C6A75E]" />
             <span>{event.time}</span>
           </div>
           <div className="flex items-center gap-2">
-            <MapPin size={15} className="text-[#e4572e]" />
+            <MapPin size={15} className="text-[#C6A75E]" />
             <span className="truncate">{event.venue}</span>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
           <div className="mt-4 space-y-1.5">
             <div className="flex justify-between text-xs text-black/60">
               <span className="flex items-center gap-1.5">
-                <Users size={14} className="text-[#e4572e]" /> Seat Availability
+                <Users size={14} className="text-[#C6A75E]" /> Seat Availability
               </span>
               <span className="font-mono">
                 {event.capacity.filled} / {event.capacity.total} Seats Booked
@@ -138,7 +138,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
             </div>
             <div className="h-2 w-full bg-black/10 rounded-full overflow-hidden">
               <div
-                className="h-full bg-[#e4572e] rounded-full transition-all duration-500"
+                className="h-full bg-[#C6A75E] rounded-full transition-all duration-500"
                 style={{
                   width: `${Math.round(
                     (event.capacity.filled / event.capacity.total) * 100
@@ -153,7 +153,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
         <div className="mt-6 border-t border-black/10 pt-5">
           {isRegistered ? (
             <div className="rounded-[1.5rem] bg-[#111111] text-white p-5 text-center space-y-3">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#e4572e] text-white mx-auto">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#C6A75E] text-white mx-auto">
                 <CheckCircle2 size={24} />
               </div>
               <h3 className="text-xl font-bold">Registration Confirmed!</h3>
@@ -169,7 +169,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                 </button>
                 <button
                   onClick={onClose}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#e4572e] hover:bg-[#f26a42] px-4 py-2 text-xs font-medium text-white transition-all"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#C6A75E] hover:bg-[#C6A75E] px-4 py-2 text-xs font-medium text-white transition-all"
                 >
                   Done
                 </button>
@@ -184,7 +184,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                 <button
                   type="button"
                   onClick={handleAddToCalendar}
-                  className="inline-flex items-center gap-1.5 text-xs text-[#e4572e] font-medium hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs text-[#C6A75E] font-medium hover:underline"
                 >
                   <CalendarPlus size={14} /> Calendar Export
                 </button>
@@ -197,7 +197,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                   placeholder="Full Name"
-                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#e4572e] focus:outline-none"
+                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#C6A75E] focus:outline-none"
                 />
                 <input
                   type="email"
@@ -205,7 +205,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                   placeholder="Student Email (cusat.ac.in)"
-                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#e4572e] focus:outline-none"
+                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#C6A75E] focus:outline-none"
                 />
                 <input
                   type="text"
@@ -213,12 +213,12 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                   value={formState.rollNo}
                   onChange={(e) => setFormState({ ...formState, rollNo: e.target.value })}
                   placeholder="Roll No. / Reg No."
-                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#e4572e] focus:outline-none"
+                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#C6A75E] focus:outline-none"
                 />
                 <select
                   value={formState.semester}
                   onChange={(e) => setFormState({ ...formState, semester: e.target.value })}
-                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] focus:border-[#e4572e] focus:outline-none"
+                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] focus:border-[#C6A75E] focus:outline-none"
                 >
                   <option value="S1">Semester 1 (IT)</option>
                   <option value="S3">Semester 3 (IT)</option>
@@ -235,7 +235,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#111111] hover:bg-[#e4572e] px-6 py-2.5 text-xs font-semibold text-white transition-all duration-300 disabled:opacity-50"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#111111] hover:bg-[#C6A75E] px-6 py-2.5 text-xs font-semibold text-white transition-all duration-300 disabled:opacity-50"
                 >
                   {isSubmitting ? "Confirming..." : "Confirm Registration"}
                 </button>

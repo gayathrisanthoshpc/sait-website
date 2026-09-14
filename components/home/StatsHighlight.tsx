@@ -11,7 +11,7 @@ const stats = [
 
 export default function StatsHighlight() {
   return (
-    <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-16 md:px-10 md:py-20">
+    <section className="border-b border-black/10 bg-[#E8DCC8] px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {stats.map((stat, index) => (

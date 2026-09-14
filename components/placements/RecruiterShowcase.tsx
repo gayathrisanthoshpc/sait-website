@@ -71,7 +71,7 @@ export default function RecruiterShowcase() {
                 ))}
               </div>
 
-              <div className="mt-6 inline-flex rounded-full border border-[#e4572e]/40 bg-[#e4572e]/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[#f7c7b9]">
+              <div className="mt-6 inline-flex rounded-full border border-[#C6A75E]/40 bg-[#C6A75E]/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[#f7c7b9]">
                 {company.status}
               </div>
             </motion.article>

@@ -49,7 +49,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="rounded-[2rem] border border-black/10 bg-[#111111] p-5 text-white md:p-8">
+    <div className="rounded-[2rem] border border-[#F7F3EB]/10 bg-[#111827] p-5 text-white md:p-8">
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">
@@ -76,7 +76,7 @@ export default function ContactForm() {
             onChange={(event) => handleChange("name", event.target.value)}
             placeholder="Your full name"
             aria-invalid={Boolean(errors.name)}
-            className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#e4572e] focus:outline-none"
+            className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#C6A75E] focus:outline-none"
           />
           {errors.name ? <span className="mt-2 block text-xs text-[#ffb199]">{errors.name}</span> : null}
         </label>
@@ -91,7 +91,7 @@ export default function ContactForm() {
             onChange={(event) => handleChange("email", event.target.value)}
             placeholder="name@email.com"
             aria-invalid={Boolean(errors.email)}
-            className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#e4572e] focus:outline-none"
+            className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#C6A75E] focus:outline-none"
           />
           {errors.email ? <span className="mt-2 block text-xs text-[#ffb199]">{errors.email}</span> : null}
         </label>
@@ -106,7 +106,7 @@ export default function ContactForm() {
             onChange={(event) => handleChange("subject", event.target.value)}
             placeholder="What would you like to talk about?"
             aria-invalid={Boolean(errors.subject)}
-            className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#e4572e] focus:outline-none"
+            className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#C6A75E] focus:outline-none"
           />
           {errors.subject ? <span className="mt-2 block text-xs text-[#ffb199]">{errors.subject}</span> : null}
         </label>
@@ -121,7 +121,7 @@ export default function ContactForm() {
             placeholder="Tell us a little about your query or idea."
             rows={5}
             aria-invalid={Boolean(errors.message)}
-            className="w-full rounded-[1.5rem] border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#e4572e] focus:outline-none"
+            className="w-full rounded-[1.5rem] border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#C6A75E] focus:outline-none"
           />
           {errors.message ? <span className="mt-2 block text-xs text-[#ffb199]">{errors.message}</span> : null}
         </label>
@@ -129,7 +129,7 @@ export default function ContactForm() {
         <div className="md:col-span-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-[#e4572e] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f26a42] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e4572e]"
+            className="inline-flex items-center justify-center rounded-full bg-[#1F2A44] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] hover:text-[#1F2A44] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6A75E]"
           >
             Send message
           </button>

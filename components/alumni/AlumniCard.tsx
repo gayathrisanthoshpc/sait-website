@@ -31,7 +31,7 @@ export default function AlumniCard({ alumni }: AlumniCardProps) {
       </div>
 
       <div className="mt-5">
-        <p className="text-sm font-medium uppercase tracking-[0.12em] text-[#e4572e]">
+        <p className="text-sm font-medium uppercase tracking-[0.12em] text-[#C6A75E]">
           {alumni.industry}
         </p>
         <p className="mt-2 text-lg text-black/80">{alumni.role}</p>

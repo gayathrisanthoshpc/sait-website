@@ -49,7 +49,7 @@ export default function HistoryTimeline() {
               className="grid gap-6 rounded-[2rem] border border-black/10 bg-white/30 p-6 md:grid-cols-[120px_1fr] md:items-start md:p-8"
             >
               <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.18em] text-black/45 md:block">
-                <span className="inline-block h-2 w-2 rounded-full bg-[#e4572e]" />
+                <span className="inline-block h-2 w-2 rounded-full bg-[#C6A75E]" />
                 <span>Milestone</span>
               </div>
 

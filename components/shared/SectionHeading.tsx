@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 type SectionHeadingProps = {
@@ -13,14 +16,34 @@ export default function SectionHeading({
   align = "left",
   className = "",
 }: SectionHeadingProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div className={align === "center" ? "text-center" : "text-left"}>
-      <p className="saint-eyebrow">{eyebrow}</p>
-      <h2
+    <motion.div
+      initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+      whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: shouldReduceMotion ? 0.15 : 0.5, ease: "easeOut" }}
+      className={align === "center" ? "text-center" : "text-left"}
+    >
+      <motion.p
+        initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: shouldReduceMotion ? 0.15 : 0.45, ease: "easeOut" }}
+        className="saint-eyebrow"
+      >
+        {eyebrow}
+      </motion.p>
+      <motion.h2
+        initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+        whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: shouldReduceMotion ? 0.15 : 0.55, delay: shouldReduceMotion ? 0 : 0.08, ease: "easeOut" }}
         className={`mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.04em] text-[#111111] md:text-6xl ${className}`.trim()}
       >
         {title}
-      </h2>
-    </div>
+      </motion.h2>
+    </motion.div>
   );
 }
