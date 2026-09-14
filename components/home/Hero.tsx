@@ -4,11 +4,15 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, ArrowRight } from "lucide-react";
 
+import DotField from "@/components/shared/DotField";
+
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-12 md:px-10 md:py-16">
+    <section className="relative isolate overflow-hidden border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-12 md:px-10 md:py-16">
+      <DotField />
+
       <div className="pointer-events-none absolute inset-0 opacity-80">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(198,167,94,0.16),transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(31,42,68,0.08),transparent_35%)]" />
         <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(to right, rgba(31,42,68,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(31,42,68,0.04) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />

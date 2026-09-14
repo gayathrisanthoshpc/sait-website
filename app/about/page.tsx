@@ -8,6 +8,7 @@ import VisionMission from "@/components/about/VisionMission";
 import HistoryTimeline from "@/components/about/HistoryTimeline";
 import FacultyDirectory from "@/components/about/FacultyDirectory";
 import SectionHeading from "@/components/shared/SectionHeading";
+import SectionReveal from "@/components/shared/SectionReveal";
 
 const resources = [
   {
@@ -72,7 +73,7 @@ export default function AboutPage() {
       <HistoryTimeline />
       <FacultyDirectory />
 
-      <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+      <SectionReveal className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <SectionHeading
             eyebrow="Academic resources"
@@ -105,9 +106,9 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <SectionReveal className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <div className="rounded-[2rem] border border-black/10 bg-white/30 p-8 md:p-12">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
@@ -135,7 +136,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       <Footer />
     </main>

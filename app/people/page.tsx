@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import PageWrapper from "@/components/layout/PageWrapper";
 import ExecCommittee from "@/components/people/ExecCommittee";
 import SubTeamTabs from "@/components/people/SubTeamTabs";
+import SectionReveal from "@/components/shared/SectionReveal";
 
 const communityFlow = [
   "Students",
@@ -39,7 +40,7 @@ export default function PeoplePage() {
       <ExecCommittee />
       <SubTeamTabs />
 
-      <section className="border-b border-black/10 bg-[#111111] px-6 py-20 text-white md:px-10 md:py-28">
+      <SectionReveal className="border-b border-black/10 bg-[#111111] px-6 py-20 text-white md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <div className="mb-12 max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/45">
@@ -71,9 +72,9 @@ export default function PeoplePage() {
             ))}
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <SectionReveal className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <div className="rounded-[2rem] border border-black/10 bg-white/30 p-8 md:p-12">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
@@ -107,7 +108,7 @@ export default function PeoplePage() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       <Footer />
     </main>

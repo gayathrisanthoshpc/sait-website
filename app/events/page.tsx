@@ -10,6 +10,7 @@ import Footer from "@/components/layout/Footer";
 import PageWrapper from "@/components/layout/PageWrapper";
 import UpcomingEvents from "@/components/events/UpcomingEvents";
 import PastEventsArchive from "@/components/events/PastEventsArchive";
+import SectionReveal from "@/components/shared/SectionReveal";
 import { events } from "@/data/events";
 
 const pastEvents = events.filter((event) => event.isPast);
@@ -105,7 +106,7 @@ export default function EventsPage() {
         )}
       </AnimatePresence>
 
-      <section className="px-6 py-14 md:px-10 md:py-20">
+      <SectionReveal className="px-6 py-14 md:px-10 md:py-20">
         <div className="mx-auto max-w-[1440px]">
           <div className="rounded-[2rem] border border-[#1F2A44]/10 bg-white/60 p-8 md:p-12">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1F2A44]/55">
@@ -133,7 +134,7 @@ export default function EventsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       <Footer />
     </main>

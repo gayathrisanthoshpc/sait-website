@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import StatsHighlight from "@/components/home/StatsHighlight";
 import QuickLinks from "@/components/home/QuickLinks";
+import SectionReveal from "@/components/shared/SectionReveal";
 
 const eventMock = {
   name: "Mock Event: SAIT Design Studio",
@@ -30,7 +31,7 @@ export default function Home() {
       <StatsHighlight />
       <QuickLinks />
 
-      <section id="about" className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
+      <SectionReveal id="about" className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-[1440px] gap-12 md:grid-cols-[1.05fr_1.35fr] md:items-start">
           <div className="md:pt-4">
             <p className="saint-eyebrow">01 — Know SAIT</p>
@@ -71,9 +72,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
-      <section
+      <SectionReveal
         id="events"
         className="border-b border-black/10 bg-[#1F2A44] px-6 py-20 text-white md:px-10 md:py-28"
       >
@@ -136,9 +137,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
-      <section className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
+      <SectionReveal className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <div className="mb-10 max-w-3xl">
             <p className="saint-eyebrow">03 — The SAIT archive</p>
@@ -173,9 +174,9 @@ export default function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
-      <section id="activity" className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
+      <SectionReveal id="activity" className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-[1440px] gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-end">
           <div>
             <p className="saint-eyebrow">04 — My SAIT journey</p>
@@ -205,9 +206,9 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
-      <section className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
+      <SectionReveal className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
             <div>
@@ -226,7 +227,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       <Footer />
     </main>
