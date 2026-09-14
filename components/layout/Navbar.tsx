@@ -55,7 +55,8 @@ export default function Navbar() {
               alt="SAIT"
               width={96}
               height={96}
-              className="h-8 w-auto shrink-0 object-contain sm:h-9"
+              className="h-8 w-auto max-w-none shrink-0 object-contain md:h-9 md:w-auto"
+              style={{ width: "auto", maxWidth: "none" }}
               priority
             />
             <div className="leading-none">
