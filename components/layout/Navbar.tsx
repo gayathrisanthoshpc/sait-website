@@ -82,8 +82,9 @@ export default function Navbar() {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={`relative rounded-full px-3.5 py-2 font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44] ${
-                    isActive ? "bg-[#1F2A44] text-[#F7F3EB]" : "text-[#1F2A44] hover:bg-[#1F2A44]/8"
+                    isActive ? "bg-[#1F2A44]" : "text-[#1F2A44] hover:bg-[#1F2A44]/8"
                   }`}
+                  style={isActive ? { color: "#F7F3EB" } : undefined}
                 >
                   {item.label}
                   {!isActive ? (
@@ -123,8 +124,9 @@ export default function Navbar() {
                       aria-current={isActive ? "page" : undefined}
                       onClick={() => setIsSecondaryOpen(false)}
                       className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-left text-sm font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44] ${
-                        isActive ? "bg-[#1F2A44] text-[#F7F3EB]" : "text-[#1F2A44] hover:bg-[#1F2A44]/8"
+                        isActive ? "bg-[#1F2A44]" : "text-[#1F2A44] hover:bg-[#1F2A44]/8"
                       }`}
+                      style={isActive ? { color: "#F7F3EB" } : undefined}
                     >
                       <span>{item.label}</span>
                       <ArrowRight size={13} />
@@ -139,7 +141,8 @@ export default function Navbar() {
         <div className="flex shrink-0 items-center gap-2.5">
           <Link
             href="/activity-logger"
-            className="hidden rounded-full bg-[#1F2A44] px-4 py-2.5 text-sm font-medium text-[#F7F3EB] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] md:inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
+            className="hidden rounded-full bg-[#1F2A44] px-4 py-2.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] md:inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
+            style={{ color: "#F7F3EB" }}
           >
             My SAIT
           </Link>
@@ -176,8 +179,9 @@ export default function Navbar() {
                   onClick={closeMobileMenu}
                   aria-current={isActive ? "page" : undefined}
                   className={`flex items-center justify-between rounded-xl px-3 py-2.5 font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44] ${
-                    isActive ? "bg-[#1F2A44] text-[#F7F3EB]" : "text-[#1F2A44] hover:bg-[#1F2A44]/8"
+                    isActive ? "bg-[#1F2A44]" : "text-[#1F2A44] hover:bg-[#1F2A44]/8"
                   }`}
+                  style={isActive ? { color: "#F7F3EB" } : undefined}
                 >
                   <span>{item.label}</span>
                   <ArrowRight size={13} className={isActive ? "text-[#F7F3EB]" : "text-[#1F2A44]/40"} />
