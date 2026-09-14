@@ -5,23 +5,23 @@ import { motion } from "framer-motion";
 const directory = [
   {
     title: "Head of Department",
-    name: "Name to be added",
-    details: "Department leadership and academic direction",
+    name: "Dr. Ananya Menon",
+    details: "Sample faculty profile for prototype",
   },
   {
     title: "Faculty Coordinator",
-    name: "Name to be added",
-    details: "Faculty coordination and student support",
+    name: "Dr. Rahul Nair",
+    details: "Sample faculty profile for prototype",
   },
   {
-    title: "Staff Coordinator",
-    name: "Name to be added",
-    details: "Administrative support and community coordination",
+    title: "Faculty Member",
+    name: "Dr. Meera Thomas",
+    details: "Sample faculty profile for prototype",
   },
   {
-    title: "Faculty / Staff",
-    name: "Name to be added",
-    details: "Department support and academic collaboration",
+    title: "Student Support",
+    name: "Prof. Nikhil Varghese",
+    details: "Sample faculty profile for prototype",
   },
 ];
 
@@ -36,6 +36,9 @@ export default function FacultyDirectory() {
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
             The people who support the community.
           </h2>
+          <p className="mt-4 text-sm leading-relaxed text-white/65">
+            Faculty profiles shown here are representative prototype content.
+          </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
