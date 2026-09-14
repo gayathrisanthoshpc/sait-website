@@ -57,7 +57,7 @@ export default function Footer() {
                 alt="SAIT logo"
                 width={42}
                 height={42}
-                className="h-10 w-10 object-contain rounded-full bg-white/10 p-1.5"
+                className="h-8 w-auto shrink-0 object-contain md:h-9"
               />
 
               <div className="leading-none">

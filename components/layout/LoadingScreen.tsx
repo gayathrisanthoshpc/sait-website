@@ -238,8 +238,8 @@ export default function LoadingScreen() {
                 height={1612}
                 priority
                 draggable={false}
-                className="h-20 w-auto object-contain md:h-24"
-                sizes="(max-width: 768px) 80px, 96px"
+                className="h-14 w-auto object-contain sm:h-16 md:h-[72px]"
+                sizes="(max-width: 768px) 64px, 72px"
               />
             </motion.div>
 

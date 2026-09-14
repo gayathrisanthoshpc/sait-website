@@ -53,9 +53,9 @@ export default function Navbar() {
             <Image
               src="/images/sait-logo.png"
               alt="SAIT"
-              width={120}
-              height={120}
-              className="h-9 w-9 object-contain"
+              width={96}
+              height={96}
+              className="h-8 w-auto shrink-0 object-contain sm:h-9"
               priority
             />
             <div className="leading-none">
