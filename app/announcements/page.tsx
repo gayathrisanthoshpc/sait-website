@@ -73,9 +73,6 @@ export default function AnnouncementsPage() {
                 Keep students informed about events, registrations, deadlines,
                 opportunities and the latest department and community updates.
               </p>
-              <span className="mt-5 inline-flex rounded-full border border-black/10 bg-white/40 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-black/60">
-                DEMO DATA
-              </span>
             </div>
           </div>
         </div>
@@ -119,7 +116,7 @@ export default function AnnouncementsPage() {
               {featuredAnnouncement.deadline ? (
                 <div className="mt-6 rounded-[1.5rem] border border-black/10 bg-white/60 p-4">
                   <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
-                    Demo deadline
+                    Deadline
                   </p>
                   <p className="mt-2 text-xl font-medium text-[#111111]">
                     {featuredAnnouncement.deadline}

@@ -57,7 +57,6 @@ export default function PlacementsPage() {
             <div className="flex justify-start md:justify-end">
               <div className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/30 px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] text-black/60">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#C6A75E]" />
-                DEMO DATA
               </div>
             </div>
           </div>
@@ -113,7 +112,6 @@ export default function PlacementsPage() {
                   <BriefcaseBusiness size={20} />
                 </div>
 
-                <p className="text-[10px] uppercase tracking-[0.18em] text-white/45">Demo profile</p>
                 <h3 className="mt-3 text-2xl font-medium tracking-tight text-white">{profile.name}</h3>
                 <p className="mt-2 text-sm text-white/65">{profile.role}</p>
                 <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/45">{profile.field}</p>

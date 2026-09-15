@@ -39,9 +39,6 @@ export default function AlumniCard({ alumni }: AlumniCardProps) {
       </div>
 
       <div className="mt-5 rounded-[1.4rem] border border-black/10 bg-[#f5f4ef] p-4">
-        <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
-          Demo achievement
-        </p>
         <p className="mt-2 text-sm leading-relaxed text-black/70">{alumni.achievement}</p>
       </div>
 

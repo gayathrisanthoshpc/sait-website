@@ -98,9 +98,6 @@ export default function ActivityLoggerPage() {
                 Track workshops, projects, competitions, volunteering, leadership and
                 other contributions as part of your student journey with SAIT.
               </p>
-              <span className="mt-5 inline-flex rounded-full border border-black/10 bg-white/40 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-black/60">
-                DEMO DASHBOARD
-              </span>
             </div>
           </div>
         </div>

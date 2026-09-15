@@ -15,23 +15,23 @@ import { alumni, alumniBatches, alumniIndustries } from "@/data/alumni";
 const contributions = [
   {
     title: "Career talk",
-    description: "Demo contribution: an alumni-led talk unpacking pathways from classroom projects to job interviews.",
+    description: "An alumni-led talk unpacking pathways from classroom projects to job interviews.",
   },
   {
     title: "Mentorship",
-    description: "Demo contribution: one-to-one guidance for students refining goals, portfolios and decision-making.",
+    description: "One-to-one guidance for students refining goals, portfolios and decision-making.",
   },
   {
     title: "Workshop",
-    description: "Demo contribution: hands-on sessions on tools, workflows and industry expectations.",
+    description: "Hands-on sessions on tools, workflows and industry expectations.",
   },
   {
     title: "Project guidance",
-    description: "Demo contribution: alumni review student ideas and help turn concepts into practically relevant deliverables.",
+    description: "Alumni review student ideas and help turn concepts into practically relevant deliverables.",
   },
   {
     title: "Industry session",
-    description: "Demo contribution: a short session on career readiness, design thinking and team collaboration.",
+    description: "A short session on career readiness, design thinking and team collaboration.",
   },
 ];
 
@@ -103,9 +103,6 @@ export default function AlumniPage() {
                 shared experience, guidance, opportunities, and a continuing
                 relationship with the student community.
               </p>
-              <span className="mt-5 inline-flex rounded-full border border-black/10 bg-white/40 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-black/60">
-                DEMO DATA
-              </span>
             </div>
           </div>
         </div>
@@ -254,9 +251,6 @@ export default function AlumniPage() {
                 key={item.title}
                 className="rounded-[2rem] border border-black/10 bg-white/30 p-5"
               >
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
-                  Demo contribution
-                </p>
                 <h3 className="mt-4 text-2xl font-medium tracking-tight text-[#111111]">
                   {item.title}
                 </h3>

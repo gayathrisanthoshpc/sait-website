@@ -67,12 +67,10 @@ export default function AnnouncementCard({ item, onToggleRead }: AnnouncementCar
       {expanded ? (
         <div className="mt-5 rounded-[1.5rem] border border-black/10 bg-[#111111] p-4 text-white">
           <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">
-            Demo detail
+            Announcement detail
           </p>
           <p className="mt-3 text-sm leading-relaxed text-white/75">
-            This is a mock announcement for the SAIT redesign prototype. It illustrates a
-            department update, registration window, deadline, or opportunity notice without
-            implying an official institutional notice.
+            Department update, registration window, deadline, or opportunity notice.
           </p>
         </div>
       ) : null}

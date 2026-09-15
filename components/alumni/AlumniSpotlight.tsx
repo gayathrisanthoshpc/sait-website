@@ -15,9 +15,6 @@ export default function AlumniSpotlight({ alumni }: AlumniSpotlightProps) {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/55">
             Featured alumni
           </p>
-          <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/70">
-            DEMO DATA
-          </span>
         </div>
 
         <motion.div
@@ -47,7 +44,7 @@ export default function AlumniSpotlight({ alumni }: AlumniSpotlightProps) {
               <div className="flex items-center gap-3 text-[#C6A75E]">
                 <Quote size={18} />
                 <span className="text-[10px] font-medium uppercase tracking-[0.18em]">
-                  Demo story
+                  Alumni story
                 </span>
               </div>
               <p className="mt-4 text-lg leading-relaxed text-black/75">“{alumni.story}”</p>
@@ -64,7 +61,7 @@ export default function AlumniSpotlight({ alumni }: AlumniSpotlightProps) {
 
             <div className="rounded-[1.5rem] border border-black/10 bg-white/60 p-4">
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
-                Demo signal
+                Achievement detail
               </p>
               <p className="mt-2 text-base leading-relaxed text-black/70">{alumni.achievement}</p>
             </div>

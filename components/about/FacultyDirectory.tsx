@@ -6,22 +6,22 @@ const directory = [
   {
     title: "Head of Department",
     name: "Dr. Ananya Menon",
-    details: "Sample faculty profile for prototype",
+    details: "Faculty profile",
   },
   {
     title: "Faculty Coordinator",
     name: "Dr. Rahul Nair",
-    details: "Sample faculty profile for prototype",
+    details: "Faculty profile",
   },
   {
     title: "Faculty Member",
     name: "Dr. Meera Thomas",
-    details: "Sample faculty profile for prototype",
+    details: "Faculty profile",
   },
   {
     title: "Student Support",
     name: "Prof. Nikhil Varghese",
-    details: "Sample faculty profile for prototype",
+    details: "Faculty profile",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function FacultyDirectory() {
             The people who support the community.
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-white/65">
-            Faculty profiles shown here are representative prototype content.
+            Faculty profiles supporting the SAIT community.
           </p>
         </div>
 
