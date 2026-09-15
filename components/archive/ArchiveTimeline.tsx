@@ -22,8 +22,7 @@ export default function ArchiveTimeline() {
       <div className="mx-auto max-w-[1440px]">
         <motion.div
           initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0.15 : 0.55, ease: "easeOut" }}
           className="mb-8"
         >

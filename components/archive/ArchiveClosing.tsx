@@ -11,8 +11,7 @@ export default function ArchiveClosing() {
       <div className="mx-auto max-w-[1440px]">
         <motion.div
           initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0.15 : 0.6, ease: "easeOut" }}
           className="rounded-[2rem] border border-[#1F2A44]/10 bg-[#1F2A44] p-8 text-[#F7F3EB] md:p-12"
         >

@@ -14,8 +14,7 @@ export default function ArchiveTimelineItem({ item }: ArchiveTimelineItemProps) 
   return (
     <motion.article
       initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: shouldReduceMotion ? 0.15 : 0.55, ease: "easeOut" }}
       className="relative grid gap-5 md:grid-cols-[120px_1fr]"
     >
@@ -23,8 +22,7 @@ export default function ArchiveTimelineItem({ item }: ArchiveTimelineItemProps) 
         <div className="flex items-center gap-3 md:block">
           <motion.span
             initial={shouldReduceMotion ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0.7 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: shouldReduceMotion ? 0.15 : 0.45, ease: "easeOut" }}
             className="relative z-10 inline-flex h-4 w-4 rounded-full border-2 border-[#F7F3EB] bg-[#C6A75E] shadow-[0_0_0_4px_rgba(198,167,94,0.16)]"
           />

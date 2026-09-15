@@ -10,8 +10,7 @@ export default function MagazineFeature() {
       <div className="mx-auto max-w-[1440px]">
         <motion.div
           initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0.15 : 0.55, ease: "easeOut" }}
           className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center"
         >
