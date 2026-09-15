@@ -17,10 +17,10 @@ export default function VisionMission() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
+    <section className="border-b border-[#1F2A44]/10 px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
             02 — Vision &amp; Mission
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
@@ -28,7 +28,7 @@ export default function VisionMission() {
           </h2>
         </div>
 
-        <div className="grid gap-0 border-y border-black/10 md:grid-cols-2">
+        <div className="grid gap-0 border-y border-[#1F2A44]/10 md:grid-cols-2">
           {statements.map((statement, index) => (
             <motion.article
               key={statement.label}
@@ -36,7 +36,7 @@ export default function VisionMission() {
               whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: shouldReduceMotion ? 0.15 : 0.45, delay: shouldReduceMotion ? 0 : index * 0.08, ease: "easeOut" }}
-              className={`px-1 py-8 md:px-8 md:py-10 ${index === 0 ? "md:border-r md:border-black/10" : "border-t border-black/10 md:border-t-0"}`}
+              className={`px-1 py-8 md:px-8 md:py-10 ${index === 0 ? "md:border-r md:border-[#1F2A44]/10" : "border-t border-[#1F2A44]/10 md:border-t-0"}`}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A75E]">
                 {statement.label}

@@ -102,7 +102,7 @@ export default function JourneyPath({
 
                 <div className="rounded-[1rem] border border-[#C6A75E]/20 bg-[#C6A75E]/10 p-3">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C6A75E]">
-                    Mock achievement
+                    Latest achievement
                   </p>
                   <p className="mt-2 text-lg font-medium text-[#F7F3EB]">
                     {selectedStage.achievement}

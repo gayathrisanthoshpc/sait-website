@@ -6,10 +6,10 @@ import { placementStats } from "@/data/placements";
 
 export default function PlacementStats() {
   return (
-    <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+    <section className="border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
             Placement highlights
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
@@ -25,13 +25,13 @@ export default function PlacementStats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.35, delay: index * 0.05 }}
-              className="rounded-[2rem] border border-black/10 bg-white/30 p-6"
+              className="rounded-[2rem] border border-[#1F2A44]/10 bg-white/30 p-6"
             >
-              <p className="text-[10px] uppercase tracking-[0.18em] text-black/45">{stat.note}</p>
-              <p className="mt-4 text-4xl font-semibold tracking-tight text-[#111111] md:text-5xl">
+              <p className="text-[10px] uppercase tracking-[0.18em] text-[#1F2A44]/45">{stat.note}</p>
+              <p className="mt-4 text-4xl font-semibold tracking-tight text-[#1F2A44] md:text-5xl">
                 {stat.value}
               </p>
-              <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-black/45">
+              <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-[#1F2A44]/45">
                 {stat.label}
               </p>
             </motion.div>

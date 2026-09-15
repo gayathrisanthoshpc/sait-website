@@ -40,7 +40,7 @@ export default function SectionHeading({
         whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: shouldReduceMotion ? 0.15 : 0.55, delay: shouldReduceMotion ? 0 : 0.08, ease: "easeOut" }}
-        className={`mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.04em] text-[#111111] md:text-6xl ${className}`.trim()}
+        className={`mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.04em] text-[#1F2A44] md:text-6xl ${className}`.trim()}
       >
         {title}
       </motion.h2>

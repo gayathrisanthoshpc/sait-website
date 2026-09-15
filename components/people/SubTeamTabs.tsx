@@ -10,10 +10,10 @@ export default function SubTeamTabs() {
   const [activeTab, setActiveTab] = useState<SubTeamKey>("Tech");
 
   return (
-    <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+    <section className="border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
             Sub-teams & Working Groups
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
@@ -37,8 +37,8 @@ export default function SubTeamTabs() {
                 onClick={() => setActiveTab(team)}
                 className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-200 ${
                   isActive
-                    ? "border-[#111111] bg-[#111111] text-white shadow-md"
-                    : "border-black/10 bg-white/30 text-[#111111] hover:border-black/20 hover:bg-white"
+                    ? "border-[#1F2A44] bg-[#1F2A44] text-white shadow-md"
+                    : "border-[#1F2A44]/10 bg-white/30 text-[#1F2A44] hover:border-[#1F2A44]/20 hover:bg-white"
                 }`}
               >
                 {team} Team ({subTeams[team].length})

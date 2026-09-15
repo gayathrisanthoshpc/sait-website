@@ -188,7 +188,7 @@ export const events: EventItem[] = [
     time: "Evening Session",
     venue: "Virtual & Seminar Hall",
     description:
-      "One-on-one resume reviews, mock interviews, and career roadmaps with 15+ IT department alumni.",
+      "One-on-one resume reviews, practice interviews, and career roadmaps with 15+ IT department alumni.",
     isPast: true,
     year: "2026",
     outcome: "Helped 80+ final year students prepare for campus placement drives.",

@@ -5,7 +5,7 @@ import { demoLeaderboard } from "@/data/activities";
 
 export default function Leaderboard() {
   return (
-    <section className="rounded-[2rem] border border-black/10 bg-[#111111] p-5 text-white md:p-6 shadow-xl">
+    <section className="rounded-[2rem] border border-[#1F2A44]/10 bg-[#1F2A44] p-5 text-white md:p-6 shadow-xl">
       <div className="mb-5 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <Trophy size={18} className="text-[#C6A75E]" />
@@ -13,7 +13,7 @@ export default function Leaderboard() {
             Top Contributor Leaderboard
           </h3>
         </div>
-        <span className="rounded-full border border-[#C6A75E]/40 bg-[#C6A75E]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#f7c7b9]">
+        <span className="rounded-full border border-[#C6A75E]/40 bg-[#C6A75E]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#F7F3EB]">
           S5 / S7 BATCH
         </span>
       </div>
@@ -61,7 +61,7 @@ export default function Leaderboard() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-1.5 text-sm font-bold text-[#f5f4ef]">
+              <div className="flex items-center gap-1.5 text-sm font-bold text-[#F7F3EB]">
                 <Crown size={14} className={isGold ? "text-[#C6A75E]" : "text-white/40"} />
                 <span>{item.points} pts</span>
               </div>

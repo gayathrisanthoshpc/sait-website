@@ -7,10 +7,10 @@ import MemberCard from "@/components/people/MemberCard";
 
 export default function ExecCommittee() {
   return (
-    <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+    <section className="border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
             Executive Committee 2026–2027
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">

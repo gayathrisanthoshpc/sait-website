@@ -9,7 +9,7 @@ type AlumniSpotlightProps = {
 
 export default function AlumniSpotlight({ alumni }: AlumniSpotlightProps) {
   return (
-    <section className="border-b border-black/10 bg-[#111111] px-6 py-20 text-white md:px-10 md:py-28">
+    <section className="border-b border-[#1F2A44]/10 bg-[#1F2A44] px-6 py-20 text-white md:px-10 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 flex items-center justify-between gap-4">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/55">
@@ -40,33 +40,33 @@ export default function AlumniSpotlight({ alumni }: AlumniSpotlightProps) {
               <p>{alumni.industry}</p>
             </div>
 
-            <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-[#f5f4ef] p-5 text-[#111111]">
+            <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-[#F7F3EB] p-5 text-[#1F2A44]">
               <div className="flex items-center gap-3 text-[#C6A75E]">
                 <Quote size={18} />
                 <span className="text-[10px] font-medium uppercase tracking-[0.18em]">
                   Alumni story
                 </span>
               </div>
-              <p className="mt-4 text-lg leading-relaxed text-black/75">“{alumni.story}”</p>
+              <p className="mt-4 text-lg leading-relaxed text-[#1F2A44]/75">“{alumni.story}”</p>
             </div>
           </div>
 
-          <div className="flex flex-col justify-between gap-6 rounded-[1.8rem] border border-white/10 bg-[#f5f4ef] p-5 text-[#111111]">
+          <div className="flex flex-col justify-between gap-6 rounded-[1.8rem] border border-white/10 bg-[#F7F3EB] p-5 text-[#1F2A44]">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#1F2A44]/45">
                 Achievement highlight
               </p>
               <p className="mt-4 text-3xl font-semibold tracking-tight">{alumni.highlight}</p>
             </div>
 
-            <div className="rounded-[1.5rem] border border-black/10 bg-white/60 p-4">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
+            <div className="rounded-[1.5rem] border border-[#1F2A44]/10 bg-white/60 p-4">
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#1F2A44]/45">
                 Achievement detail
               </p>
-              <p className="mt-2 text-base leading-relaxed text-black/70">{alumni.achievement}</p>
+              <p className="mt-2 text-base leading-relaxed text-[#1F2A44]/70">{alumni.achievement}</p>
             </div>
 
-            <div className="inline-flex items-center gap-2 text-sm font-medium text-[#111111]">
+            <div className="inline-flex items-center gap-2 text-sm font-medium text-[#1F2A44]">
               Learn from the community
               <ArrowRight size={16} />
             </div>

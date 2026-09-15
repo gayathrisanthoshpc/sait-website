@@ -81,7 +81,7 @@ function CountUp({ value, duration = 1200 }: CountUpProps) {
   return (
     <p
       ref={ref}
-      className="text-4xl font-semibold tracking-tight text-[#111111] md:text-5xl"
+      className="text-4xl font-semibold tracking-tight text-[#1F2A44] md:text-5xl"
     >
       {displayValue}
     </p>
@@ -90,7 +90,7 @@ function CountUp({ value, duration = 1200 }: CountUpProps) {
 
 export default function StatsHighlight() {
   return (
-    <section className="border-b border-black/10 bg-[#E8DCC8] px-6 py-16 md:px-10 md:py-20">
+    <section className="border-b border-[#1F2A44]/10 bg-[#E8DCC8] px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {stats.map((stat, index) => (
@@ -100,10 +100,10 @@ export default function StatsHighlight() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.35, delay: index * 0.06 }}
-              className="rounded-[2rem] border border-black/10 bg-white/30 p-6"
+              className="rounded-[2rem] border border-[#1F2A44]/10 bg-white/30 p-6"
             >
               <CountUp value={stat.value} duration={1200} />
-              <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-black/45">
+              <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-[#1F2A44]/45">
                 {stat.label}
               </p>
             </motion.div>

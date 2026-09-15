@@ -27,7 +27,7 @@ const directory = [
 
 export default function FacultyDirectory() {
   return (
-    <section className="border-b border-black/10 bg-[#111111] px-6 py-20 text-white md:px-10 md:py-28">
+    <section className="border-b border-[#1F2A44]/10 bg-[#1F2A44] px-6 py-20 text-white md:px-10 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-12 max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/45">

@@ -52,24 +52,24 @@ export default function AnnouncementsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f5f4ef] text-[#111111]">
+    <main className="min-h-screen bg-[#F7F3EB] text-[#1F2A44]">
       <Navbar />
 
-      <PageWrapper className="border-b border-black/10">
+      <PageWrapper className="border-b border-[#1F2A44]/10">
         <div className="mx-auto max-w-[1440px]">
           <div className="grid gap-10 md:grid-cols-[1.4fr_0.8fr] md:items-end">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
                 09 — Announcements
               </p>
 
-              <h1 className="mt-4 max-w-4xl text-[clamp(3rem,6vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-[#111111]">
+              <h1 className="mt-4 max-w-4xl text-[clamp(3rem,6vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-[#1F2A44]">
                 Stay in the loop.
               </h1>
             </div>
 
             <div className="md:justify-self-end">
-              <p className="max-w-md text-lg leading-relaxed text-black/65">
+              <p className="max-w-md text-lg leading-relaxed text-[#1F2A44]/65">
                 Keep students informed about events, registrations, deadlines,
                 opportunities and the latest department and community updates.
               </p>
@@ -78,7 +78,7 @@ export default function AnnouncementsPage() {
         </div>
       </PageWrapper>
 
-      <section className="border-b border-black/10 bg-[#111111] px-6 py-20 text-white md:px-10 md:py-28">
+      <section className="border-b border-[#1F2A44]/10 bg-[#1F2A44] px-6 py-20 text-white md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
@@ -104,21 +104,21 @@ export default function AnnouncementsPage() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-[#f5f4ef] p-6 text-[#111111]">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
+            <div className="rounded-[2rem] border border-white/10 bg-[#F7F3EB] p-6 text-[#1F2A44]">
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#1F2A44]/45">
                 Status
               </p>
-              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-3 py-2 text-sm font-medium text-[#111111]">
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F2A44]/10 bg-white/60 px-3 py-2 text-sm font-medium text-[#1F2A44]">
                 <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#C6A75E]" aria-hidden="true" />
                 {featuredAnnouncement.priority} priority
               </div>
 
               {featuredAnnouncement.deadline ? (
-                <div className="mt-6 rounded-[1.5rem] border border-black/10 bg-white/60 p-4">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
+                <div className="mt-6 rounded-[1.5rem] border border-[#1F2A44]/10 bg-white/60 p-4">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#1F2A44]/45">
                     Deadline
                   </p>
-                  <p className="mt-2 text-xl font-medium text-[#111111]">
+                  <p className="mt-2 text-xl font-medium text-[#1F2A44]">
                     {featuredAnnouncement.deadline}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export default function AnnouncementsPage() {
 
               <button
                 type="button"
-                className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#111111] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+                className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#1F2A44] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
               >
                 Read more
                 <ArrowRight size={16} />
@@ -136,32 +136,32 @@ export default function AnnouncementsPage() {
         </div>
       </section>
 
-      <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+      <section className="border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <SectionHeading
             eyebrow="Announcements feed"
             title="The latest updates from the SAIT community."
           />
 
-          <div className="mt-8 grid gap-4 rounded-[2rem] border border-black/10 bg-white/30 p-4 md:grid-cols-[1.5fr_1fr]">
-            <label className="flex items-center gap-3 rounded-full border border-black/10 bg-[#f5f4ef] px-4 py-3 text-sm text-black/70 focus-within:border-[#111111] focus-within:ring-2 focus-within:ring-black/10">
-              <Search size={16} className="text-black/45" />
+          <div className="mt-8 grid gap-4 rounded-[2rem] border border-[#1F2A44]/10 bg-white/30 p-4 md:grid-cols-[1.5fr_1fr]">
+            <label className="flex items-center gap-3 rounded-full border border-[#1F2A44]/10 bg-[#F7F3EB] px-4 py-3 text-sm text-[#1F2A44]/70 focus-within:border-[#1F2A44] focus-within:ring-2 focus-within:ring-black/10">
+              <Search size={16} className="text-[#1F2A44]/45" />
               <input
                 type="search"
                 value={search}
                 onChange={(event) => setSearch(event.target.value)}
                 placeholder="Search announcements"
                 aria-label="Search announcements"
-                className="w-full bg-transparent text-sm text-[#111111] placeholder:text-black/35 focus:outline-none"
+                className="w-full bg-transparent text-sm text-[#1F2A44] placeholder:text-[#1F2A44]/35 focus:outline-none"
               />
             </label>
 
-            <label className="rounded-full border border-black/10 bg-[#f5f4ef] px-4 py-3 text-sm text-black/70 focus-within:border-[#111111] focus-within:ring-2 focus-within:ring-black/10">
+            <label className="rounded-full border border-[#1F2A44]/10 bg-[#F7F3EB] px-4 py-3 text-sm text-[#1F2A44]/70 focus-within:border-[#1F2A44] focus-within:ring-2 focus-within:ring-black/10">
               <span className="sr-only">Filter announcements</span>
               <select
                 value={selectedCategory}
                 onChange={(event) => setSelectedCategory(event.target.value as "All" | AnnouncementCategory)}
-                className="w-full bg-transparent text-sm text-[#111111] focus:outline-none"
+                className="w-full bg-transparent text-sm text-[#1F2A44] focus:outline-none"
                 aria-label="Filter announcements by category"
               >
                 {announcementCategories.map((category) => (
@@ -174,17 +174,17 @@ export default function AnnouncementsPage() {
           </div>
 
           {filteredAnnouncements.length === 0 ? (
-            <div className="mt-10 rounded-[2rem] border border-dashed border-black/15 bg-white/30 p-10 text-center">
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-black/45">
+            <div className="mt-10 rounded-[2rem] border border-dashed border-[#1F2A44]/15 bg-white/30 p-10 text-center">
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#1F2A44]/45">
                 Nothing found
               </p>
-              <h3 className="mt-4 text-3xl font-semibold tracking-tight text-[#111111]">
+              <h3 className="mt-4 text-3xl font-semibold tracking-tight text-[#1F2A44]">
                 No announcements match the current filters.
               </h3>
               <button
                 type="button"
                 onClick={clearFilters}
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-[#1F2A44] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
               >
                 Clear filters
               </button>
@@ -201,8 +201,8 @@ export default function AnnouncementsPage() {
 
       <section className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
-          <div className="rounded-[2rem] border border-black/10 bg-white/30 p-8 md:p-12">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+          <div className="rounded-[2rem] border border-[#1F2A44]/10 bg-white/30 p-8 md:p-12">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
               Keep informed
             </p>
             <h2 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
@@ -212,7 +212,7 @@ export default function AnnouncementsPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/events"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#1F2A44] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
               >
                 Explore Events
                 <ArrowRight size={16} />
@@ -220,7 +220,7 @@ export default function AnnouncementsPage() {
 
               <Link
                 href="/activity-logger"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-black/15 bg-transparent px-6 py-3 text-sm font-medium text-[#111111] transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white"
+                className="inline-flex items-center justify-center gap-3 rounded-full border border-[#1F2A44]/15 bg-transparent px-6 py-3 text-sm font-medium text-[#1F2A44] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1F2A44]/25 hover:bg-white"
               >
                 Track My SAIT Journey
               </Link>

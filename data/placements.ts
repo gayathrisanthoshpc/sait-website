@@ -84,9 +84,9 @@ export const careerResources: CareerResource[] = [
     cta: "View Preparation Roadmap",
   },
   {
-    title: "Mock Interview & Technical Drills",
-    description: "Schedule 1-on-1 mock interviews with senior alumni working in product companies.",
-    cta: "Book Mock Interview Slot",
+    title: "Interview Practice & Technical Drills",
+    description: "Schedule 1-on-1 practice interviews with senior alumni working in product companies.",
+    cta: "Book Practice Interview Slot",
   },
   {
     title: "Quantitative & Aptitude Practice",

@@ -17,7 +17,7 @@ export default function RecruiterShowcase() {
   }, [selectedSector]);
 
   return (
-    <section className="border-b border-black/10 bg-[#111111] px-6 py-20 text-white md:px-10 md:py-28">
+    <section className="border-b border-[#1F2A44]/10 bg-[#1F2A44] px-6 py-20 text-white md:px-10 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
@@ -25,7 +25,7 @@ export default function RecruiterShowcase() {
               Recruiter showcase
             </p>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
-              Mock opportunities across sectors.
+              Opportunities across sectors.
             </h2>
           </div>
 
@@ -38,7 +38,7 @@ export default function RecruiterShowcase() {
                 onClick={() => setSelectedSector(sector)}
                 className={`rounded-full border px-3 py-2 text-xs font-medium uppercase tracking-[0.14em] transition-all duration-200 ${
                   selectedSector === sector
-                    ? "border-white bg-white text-[#111111]"
+                    ? "border-white bg-white text-[#1F2A44]"
                     : "border-white/15 bg-white/5 text-white hover:border-white/25"
                 }`}
               >
@@ -71,7 +71,7 @@ export default function RecruiterShowcase() {
                 ))}
               </div>
 
-              <div className="mt-6 inline-flex rounded-full border border-[#C6A75E]/40 bg-[#C6A75E]/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[#f7c7b9]">
+              <div className="mt-6 inline-flex rounded-full border border-[#C6A75E]/40 bg-[#C6A75E]/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[#F7F3EB]">
                 {company.status}
               </div>
             </motion.article>

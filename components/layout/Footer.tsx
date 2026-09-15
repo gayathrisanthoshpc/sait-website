@@ -16,7 +16,9 @@ const footerNavigation = [
   { label: "Alumni Network", href: "/alumni" },
   { label: "Hall of Fame", href: "/achievements" },
   { label: "Activity Logger", href: "/activity-logger" },
+  { label: "My SAIT Journey", href: "/journey" },
   { label: "Announcements", href: "/announcements" },
+  { label: "SAIT Archive", href: "/archive" },
 ];
 
 const socialLinks = [

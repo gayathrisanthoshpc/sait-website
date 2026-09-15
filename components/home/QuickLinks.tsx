@@ -33,7 +33,7 @@ const quickLinks = [
     number: "04",
     title: "Archive",
     description: "Browse magazine issues, student writing, and past activity memories.",
-    href: "/about",
+    href: "/archive",
     icon: BookOpen,
   },
 ];

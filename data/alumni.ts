@@ -40,7 +40,7 @@ export const alumni: AlumniRecord[] = [
     location: "Bengaluru, India",
     story:
       "Siddharth stayed deeply connected to SAIT through project feedback, running hands-on workshops on GraphQL microservices for CUSAT students.",
-    highlight: "Scaled developer tools from SAIT lab prototypes to global execution",
+    highlight: "Scaled developer tools from SAIT lab projects to global execution",
     initials: "SV",
     isFeatured: true,
   },

@@ -50,7 +50,7 @@ export const journeyStages: JourneyStage[] = [
     number: "04",
     title: "BUILD",
     description: "Turn ideas into projects.",
-    activities: ["Project work", "Prototype sprints", "Student-led builds"],
+    activities: ["Project work", "Build sprints", "Student-led builds"],
     milestone: "Projects completed",
     achievement: "Latest: Campus Event Companion",
   },

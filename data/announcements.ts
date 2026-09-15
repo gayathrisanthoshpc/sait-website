@@ -37,7 +37,7 @@ export const announcements: AnnouncementItem[] = [
     category: "Placements",
     date: "2026-09-12",
     description:
-      "The SAIT Career Cell is organizing 1-on-1 resume reviews and mock technical interviews with alumni working at Google, Amazon, and Postman.",
+      "The SAIT Career Cell is organizing 1-on-1 resume reviews and practice technical interviews with alumni working at Google, Amazon, and Postman.",
     deadline: "September 20, 2026",
     priority: "High",
     read: false,

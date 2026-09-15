@@ -58,7 +58,7 @@ export default function ActivityLoggerPage() {
       date: formState.date,
       role: formState.role,
       description: formState.description,
-      proof: formState.proof || "https://example.com/demo-proof",
+      proof: formState.proof || "https://example.com/activity-proof",
       status: "Verified",
       points: 50,
       badge: "First Step",
@@ -77,24 +77,24 @@ export default function ActivityLoggerPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f5f4ef] text-[#111111]">
+    <main className="min-h-screen bg-[#F7F3EB] text-[#1F2A44]">
       <Navbar />
 
-      <PageWrapper className="border-b border-black/10">
+      <PageWrapper className="border-b border-[#1F2A44]/10">
         <div className="mx-auto max-w-[1440px]">
           <div className="grid gap-10 md:grid-cols-[1.4fr_0.8fr] md:items-end">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
                 08 — My SAIT Journey
               </p>
 
-              <h1 className="mt-4 max-w-4xl text-[clamp(3rem,6vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-[#111111]">
+              <h1 className="mt-4 max-w-4xl text-[clamp(3rem,6vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-[#1F2A44]">
                 Everything you do here adds up.
               </h1>
             </div>
 
             <div className="md:justify-self-end">
-              <p className="max-w-md text-lg leading-relaxed text-black/65">
+              <p className="max-w-md text-lg leading-relaxed text-[#1F2A44]/65">
                 Track workshops, projects, competitions, volunteering, leadership and
                 other contributions as part of your student journey with SAIT.
               </p>
@@ -103,25 +103,25 @@ export default function ActivityLoggerPage() {
         </div>
       </PageWrapper>
 
-      <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+      <section className="border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <div className="grid gap-4 md:grid-cols-4">
             {summaryCards.map((card) => (
               <div
                 key={card.label}
-                className="rounded-[1.8rem] border border-black/10 bg-white/30 p-5"
+                className="rounded-[1.8rem] border border-[#1F2A44]/10 bg-white/30 p-5"
               >
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
+                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#1F2A44]/45">
                   {card.label}
                 </p>
-                <p className="mt-4 text-4xl font-semibold tracking-tight text-[#111111]">
+                <p className="mt-4 text-4xl font-semibold tracking-tight text-[#1F2A44]">
                   {card.value}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 rounded-[2rem] border border-black/10 bg-[#111111] p-6 text-white md:p-8">
+          <div className="mt-10 rounded-[2rem] border border-[#1F2A44]/10 bg-[#1F2A44] p-6 text-white md:p-8">
             <div className="flex items-center justify-between gap-3">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/55">
                 Participation
@@ -136,7 +136,7 @@ export default function ActivityLoggerPage() {
         </div>
       </section>
 
-      <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+      <section className="border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
             <ActivityForm
@@ -154,7 +154,7 @@ export default function ActivityLoggerPage() {
         </div>
       </section>
 
-      <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+      <section className="border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <SectionHeading
             eyebrow="Milestones"
@@ -167,31 +167,31 @@ export default function ActivityLoggerPage() {
                 key={badge.id}
                 className={`rounded-[2rem] border p-5 ${
                   badge.unlocked
-                    ? "border-black/10 bg-white/30"
-                    : "border-dashed border-black/15 bg-[#f5f4ef] opacity-70"
+                    ? "border-[#1F2A44]/10 bg-white/30"
+                    : "border-dashed border-[#1F2A44]/15 bg-[#F7F3EB] opacity-70"
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#111111] text-[#f5f4ef]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1F2A44] text-[#F7F3EB]">
                     <Sparkles size={18} />
                   </div>
 
-                  <span className="rounded-full border border-black/10 bg-white/60 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-black/60">
+                  <span className="rounded-full border border-[#1F2A44]/10 bg-white/60 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#1F2A44]/60">
                     {badge.unlocked ? "Unlocked" : "Locked"}
                   </span>
                 </div>
 
-                <h3 className="mt-5 text-2xl font-medium tracking-tight text-[#111111]">
+                <h3 className="mt-5 text-2xl font-medium tracking-tight text-[#1F2A44]">
                   {badge.name}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-black/65">{badge.description}</p>
+                <p className="mt-3 text-sm leading-relaxed text-[#1F2A44]/65">{badge.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-black/10 bg-[#f5f4ef] px-6 py-20 md:px-10 md:py-28">
+      <section className="border-b border-[#1F2A44]/10 bg-[#F7F3EB] px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
           <ActivityHistory
             activities={filteredActivities}
@@ -206,8 +206,8 @@ export default function ActivityLoggerPage() {
 
       <section className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1440px]">
-          <div className="rounded-[2rem] border border-black/10 bg-white/30 p-8 md:p-12">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+          <div className="rounded-[2rem] border border-[#1F2A44]/10 bg-white/30 p-8 md:p-12">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
               Keep going
             </p>
             <h2 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
@@ -217,7 +217,7 @@ export default function ActivityLoggerPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="/events"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#1F2A44] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E]"
               >
                 Explore Events
                 <ArrowRight size={16} />
@@ -225,7 +225,7 @@ export default function ActivityLoggerPage() {
 
               <a
                 href="/achievements"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-black/15 bg-transparent px-6 py-3 text-sm font-medium text-[#111111] transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25 hover:bg-white"
+                className="inline-flex items-center justify-center gap-3 rounded-full border border-[#1F2A44]/15 bg-transparent px-6 py-3 text-sm font-medium text-[#1F2A44] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1F2A44]/25 hover:bg-white"
               >
                 View Achievements
               </a>

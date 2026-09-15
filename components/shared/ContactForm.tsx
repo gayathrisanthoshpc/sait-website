@@ -79,7 +79,7 @@ export default function ContactForm() {
             aria-invalid={Boolean(errors.name)}
             className="w-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-white/35 focus:border-[#C6A75E] focus:outline-none"
           />
-          {errors.name ? <span className="mt-2 block text-xs text-[#ffb199]">{errors.name}</span> : null}
+          {errors.name ? <span className="mt-2 block text-xs text-[#C6A75E]">{errors.name}</span> : null}
         </label>
 
         <label className="block text-sm text-white/80 md:col-span-1">
@@ -94,7 +94,7 @@ export default function ContactForm() {
             aria-invalid={Boolean(errors.email)}
             className="w-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-white/35 focus:border-[#C6A75E] focus:outline-none"
           />
-          {errors.email ? <span className="mt-2 block text-xs text-[#ffb199]">{errors.email}</span> : null}
+          {errors.email ? <span className="mt-2 block text-xs text-[#C6A75E]">{errors.email}</span> : null}
         </label>
 
         <label className="block text-sm text-white/80 md:col-span-2">
@@ -109,7 +109,7 @@ export default function ContactForm() {
             aria-invalid={Boolean(errors.subject)}
             className="w-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-white/35 focus:border-[#C6A75E] focus:outline-none"
           />
-          {errors.subject ? <span className="mt-2 block text-xs text-[#ffb199]">{errors.subject}</span> : null}
+          {errors.subject ? <span className="mt-2 block text-xs text-[#C6A75E]">{errors.subject}</span> : null}
         </label>
 
         <label className="block text-sm text-white/80 md:col-span-2">
@@ -124,7 +124,7 @@ export default function ContactForm() {
             aria-invalid={Boolean(errors.message)}
             className="w-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-white/35 focus:border-[#C6A75E] focus:outline-none"
           />
-          {errors.message ? <span className="mt-2 block text-xs text-[#ffb199]">{errors.message}</span> : null}
+          {errors.message ? <span className="mt-2 block text-xs text-[#C6A75E]">{errors.message}</span> : null}
         </label>
 
         <div className="md:col-span-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -136,7 +136,7 @@ export default function ContactForm() {
           </button>
 
           {isSubmitted ? (
-            <p className="text-sm text-[#d9f7d7]">Thanks! Your message has been queued for the SAIT team.</p>
+            <p className="text-sm text-[#F7F3EB]">Thanks! Your message has been queued for the SAIT team.</p>
           ) : null}
         </div>
       </form> : null}

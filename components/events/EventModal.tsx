@@ -60,17 +60,17 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
 
   return (
     <div
-      className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto animate-fade-in"
+      className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#1F2A44]/60 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto animate-fade-in"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl rounded-[2rem] border border-black/15 bg-[#f5f4ef] text-[#111111] p-6 sm:p-8 shadow-2xl my-auto transition-all"
+        className="relative w-full max-w-2xl rounded-[2rem] border border-[#1F2A44]/15 bg-[#F7F3EB] text-[#1F2A44] p-6 sm:p-8 shadow-2xl my-auto transition-all"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-full bg-black/5 hover:bg-black/10 transition-colors text-black/70"
+          className="absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-full bg-[#1F2A44]/5 hover:bg-[#1F2A44]/10 transition-colors text-[#1F2A44]/70"
           aria-label="Close modal"
         >
           <X size={18} />
@@ -81,16 +81,16 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
           <span className="rounded-full bg-[#C6A75E]/10 border border-[#C6A75E]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C6A75E]">
             {event.category}
           </span>
-          <span className="text-xs text-black/40 font-mono">[ SAIT EVENT ]</span>
+          <span className="text-xs text-[#1F2A44]/40 font-mono">[ SAIT EVENT ]</span>
         </div>
 
         {/* Title */}
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111111] pr-8">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1F2A44] pr-8">
           {event.name}
         </h2>
 
         {/* Quick Meta */}
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-[1.3rem] border border-black/10 bg-white/50 p-3 text-xs text-black/75">
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-[1.3rem] border border-[#1F2A44]/10 bg-white/50 p-3 text-xs text-[#1F2A44]/75">
           <div className="flex items-center gap-2">
             <Calendar size={15} className="text-[#C6A75E]" />
             <span>{event.date}</span>
@@ -106,20 +106,20 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
         </div>
 
         {/* Description */}
-        <p className="mt-4 text-sm leading-relaxed text-black/70">
+        <p className="mt-4 text-sm leading-relaxed text-[#1F2A44]/70">
           {event.description}
         </p>
 
         {/* Speaker / Mentor */}
         {event.speaker ? (
-          <div className="mt-4 rounded-[1.2rem] border border-black/10 bg-white/40 p-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-black/45 mb-1">
+          <div className="mt-4 rounded-[1.2rem] border border-[#1F2A44]/10 bg-white/40 p-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1F2A44]/45 mb-1">
               Guest Speaker / Mentor
             </p>
-            <p className="text-sm font-semibold text-[#111111]">
+            <p className="text-sm font-semibold text-[#1F2A44]">
               {event.speaker.name}
             </p>
-            <p className="text-xs text-black/60">
+            <p className="text-xs text-[#1F2A44]/60">
               {event.speaker.role} · {event.speaker.company}
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
         {/* Capacity Bar */}
         {event.capacity ? (
           <div className="mt-4 space-y-1.5">
-            <div className="flex justify-between text-xs text-black/60">
+            <div className="flex justify-between text-xs text-[#1F2A44]/60">
               <span className="flex items-center gap-1.5">
                 <Users size={14} className="text-[#C6A75E]" /> Seat Availability
               </span>
@@ -136,7 +136,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                 {event.capacity.filled} / {event.capacity.total} Seats Booked
               </span>
             </div>
-            <div className="h-2 w-full bg-black/10 rounded-full overflow-hidden">
+            <div className="h-2 w-full bg-[#1F2A44]/10 rounded-full overflow-hidden">
               <div
                 className="h-full bg-[#C6A75E] rounded-full transition-all duration-500"
                 style={{
@@ -150,9 +150,9 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
         ) : null}
 
         {/* RSVP Form or Confirmation */}
-        <div className="mt-6 border-t border-black/10 pt-5">
+        <div className="mt-6 border-t border-[#1F2A44]/10 pt-5">
           {isRegistered ? (
-            <div className="rounded-[1.5rem] bg-[#111111] text-white p-5 text-center space-y-3">
+            <div className="rounded-[1.5rem] bg-[#1F2A44] text-white p-5 text-center space-y-3">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#C6A75E] text-white mx-auto">
                 <CheckCircle2 size={24} />
               </div>
@@ -178,7 +178,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex items-center justify-between">
-                <h4 className="text-base font-semibold text-[#111111]">
+                <h4 className="text-base font-semibold text-[#1F2A44]">
                   RSVP / Reserve Your Seat
                 </h4>
                 <button
@@ -197,7 +197,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                   placeholder="Full Name"
-                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#C6A75E] focus:outline-none"
+                  className="w-full rounded-full border border-[#1F2A44]/15 bg-white px-4 py-2.5 text-xs text-[#1F2A44] placeholder:text-[#1F2A44]/40 focus:border-[#C6A75E] focus:outline-none"
                 />
                 <input
                   type="email"
@@ -205,7 +205,7 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                   placeholder="Student Email (cusat.ac.in)"
-                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#C6A75E] focus:outline-none"
+                  className="w-full rounded-full border border-[#1F2A44]/15 bg-white px-4 py-2.5 text-xs text-[#1F2A44] placeholder:text-[#1F2A44]/40 focus:border-[#C6A75E] focus:outline-none"
                 />
                 <input
                   type="text"
@@ -213,12 +213,12 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
                   value={formState.rollNo}
                   onChange={(e) => setFormState({ ...formState, rollNo: e.target.value })}
                   placeholder="Roll No. / Reg No."
-                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] placeholder:text-black/40 focus:border-[#C6A75E] focus:outline-none"
+                  className="w-full rounded-full border border-[#1F2A44]/15 bg-white px-4 py-2.5 text-xs text-[#1F2A44] placeholder:text-[#1F2A44]/40 focus:border-[#C6A75E] focus:outline-none"
                 />
                 <select
                   value={formState.semester}
                   onChange={(e) => setFormState({ ...formState, semester: e.target.value })}
-                  className="w-full rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs text-[#111111] focus:border-[#C6A75E] focus:outline-none"
+                  className="w-full rounded-full border border-[#1F2A44]/15 bg-white px-4 py-2.5 text-xs text-[#1F2A44] focus:border-[#C6A75E] focus:outline-none"
                 >
                   <option value="S1">Semester 1 (IT)</option>
                   <option value="S3">Semester 3 (IT)</option>
@@ -229,13 +229,13 @@ export default function EventModal({ event, isOpen, onClose }: EventModalProps) 
               </div>
 
               <div className="flex items-center justify-between pt-1">
-                <span className="text-[10px] text-black/50">
+                <span className="text-[10px] text-[#1F2A44]/50">
                   * Free entry for CUSAT IT Students
                 </span>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#111111] hover:bg-[#C6A75E] px-6 py-2.5 text-xs font-semibold text-white transition-all duration-300 disabled:opacity-50"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1F2A44] hover:bg-[#C6A75E] px-6 py-2.5 text-xs font-semibold text-white transition-all duration-300 disabled:opacity-50"
                 >
                   {isSubmitting ? "Confirming..." : "Confirm Registration"}
                 </button>

@@ -144,7 +144,7 @@ export default function Navbar() {
             className="hidden rounded-full bg-[#1F2A44] px-4 py-2.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] md:inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
             style={{ color: "#F7F3EB" }}
           >
-            My SAIT
+            Log Activity
           </Link>
 
           <button
@@ -194,7 +194,7 @@ export default function Navbar() {
               onClick={closeMobileMenu}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-[#1F2A44] px-5 py-3 text-sm font-medium text-[#F7F3EB] transition-all duration-300 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
             >
-              My SAIT
+              Log Activity
             </Link>
           </div>
         </motion.div>

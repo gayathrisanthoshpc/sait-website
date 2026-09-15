@@ -35,10 +35,10 @@ export default function MemberCard({
       .slice(0, 2);
 
   return (
-    <article className="group rounded-[2rem] border border-black/10 bg-white/30 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-black/20 hover:shadow-xl">
+    <article className="group rounded-[2rem] border border-[#1F2A44]/10 bg-white/30 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#1F2A44]/20 hover:shadow-xl">
       <div className="flex items-center justify-between gap-4">
         {/* Avatar Circle with Initials */}
-        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#111111] text-[#f5f4ef] font-bold text-base border-2 border-white shadow-md transition-transform duration-300 group-hover:scale-105">
+        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#1F2A44] text-[#F7F3EB] font-bold text-base border-2 border-white shadow-md transition-transform duration-300 group-hover:scale-105">
           <span>{displayInitials}</span>
           <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-[#C6A75E]" />
         </div>
@@ -51,7 +51,7 @@ export default function MemberCard({
               target="_blank"
               rel="noreferrer"
               aria-label={`View ${name} profile`}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-black/10 bg-white/40 text-[#111111] hover:bg-[#111111] hover:text-white transition-colors"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-[#1F2A44]/10 bg-white/40 text-[#1F2A44] hover:bg-[#1F2A44] hover:text-white transition-colors"
             >
               <ArrowUpRight size={14} />
             </a>
@@ -60,15 +60,15 @@ export default function MemberCard({
       </div>
 
       <div className="mt-4">
-        <h3 className="text-xl font-bold tracking-tight text-[#111111]">{name}</h3>
+        <h3 className="text-xl font-bold tracking-tight text-[#1F2A44]">{name}</h3>
         <p className="mt-1 text-xs font-semibold text-[#C6A75E]">{role}</p>
         {year ? (
-          <p className="mt-1 text-[10px] uppercase font-mono tracking-[0.16em] text-black/50">
+          <p className="mt-1 text-[10px] uppercase font-mono tracking-[0.16em] text-[#1F2A44]/50">
             {year}
           </p>
         ) : null}
         {bio ? (
-          <p className="mt-3 text-xs leading-relaxed text-black/65 border-t border-black/5 pt-2.5">
+          <p className="mt-3 text-xs leading-relaxed text-[#1F2A44]/65 border-t border-[#1F2A44]/5 pt-2.5">
             {bio}
           </p>
         ) : null}

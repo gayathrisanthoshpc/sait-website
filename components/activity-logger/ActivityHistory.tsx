@@ -35,24 +35,24 @@ export default function ActivityHistory({
   onClearFilters,
 }: ActivityHistoryProps) {
   return (
-    <section className="rounded-[2rem] border border-black/10 bg-white/30 p-5 md:p-6">
+    <section className="rounded-[2rem] border border-[#1F2A44]/10 bg-white/30 p-5 md:p-6">
       <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1F2A44]/45">
             Activity history
           </p>
-          <h3 className="mt-3 text-3xl font-semibold tracking-tight text-[#111111]">
+          <h3 className="mt-3 text-3xl font-semibold tracking-tight text-[#1F2A44]">
             Your recent contributions
           </h3>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
-          <label className="rounded-full border border-black/10 bg-[#f5f4ef] px-3 py-2 text-sm text-black/70">
+          <label className="rounded-full border border-[#1F2A44]/10 bg-[#F7F3EB] px-3 py-2 text-sm text-[#1F2A44]/70">
             <span className="sr-only">Filter by type</span>
             <select
               value={selectedType}
               onChange={(event) => onTypeChange(event.target.value)}
-              className="w-full bg-transparent text-sm text-[#111111] focus:outline-none"
+              className="w-full bg-transparent text-sm text-[#1F2A44] focus:outline-none"
               aria-label="Filter activity history by type"
             >
               <option value="All">All types</option>
@@ -67,12 +67,12 @@ export default function ActivityHistory({
             </select>
           </label>
 
-          <label className="rounded-full border border-black/10 bg-[#f5f4ef] px-3 py-2 text-sm text-black/70">
+          <label className="rounded-full border border-[#1F2A44]/10 bg-[#F7F3EB] px-3 py-2 text-sm text-[#1F2A44]/70">
             <span className="sr-only">Filter by status</span>
             <select
               value={selectedStatus}
               onChange={(event) => onStatusChange(event.target.value)}
-              className="w-full bg-transparent text-sm text-[#111111] focus:outline-none"
+              className="w-full bg-transparent text-sm text-[#1F2A44] focus:outline-none"
               aria-label="Filter activity history by status"
             >
               <option value="All">All statuses</option>
@@ -85,17 +85,17 @@ export default function ActivityHistory({
       </div>
 
       {activities.length === 0 ? (
-        <div className="rounded-[1.5rem] border border-dashed border-black/15 bg-[#f5f4ef] p-8 text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-black/45">
+        <div className="rounded-[1.5rem] border border-dashed border-[#1F2A44]/15 bg-[#F7F3EB] p-8 text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#1F2A44]/45">
             No activity match
           </p>
-          <h4 className="mt-4 text-2xl font-medium tracking-tight text-[#111111]">
+          <h4 className="mt-4 text-2xl font-medium tracking-tight text-[#1F2A44]">
             Nothing matches the current filters.
           </h4>
           <button
             type="button"
             onClick={onClearFilters}
-            className="mt-5 inline-flex items-center justify-center rounded-full bg-[#111111] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+            className="mt-5 inline-flex items-center justify-center rounded-full bg-[#1F2A44] px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C6A75E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
           >
             Clear filters
           </button>
@@ -108,17 +108,17 @@ export default function ActivityHistory({
             return (
               <article
                 key={activity.id}
-                className="rounded-[1.6rem] border border-black/10 bg-[#f5f4ef] p-4"
+                className="rounded-[1.6rem] border border-[#1F2A44]/10 bg-[#F7F3EB] p-4"
               >
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div>
-                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
+                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#1F2A44]/45">
                       {activity.type}
                     </p>
-                    <h4 className="mt-2 text-2xl font-medium tracking-tight text-[#111111]">
+                    <h4 className="mt-2 text-2xl font-medium tracking-tight text-[#1F2A44]">
                       {activity.name}
                     </h4>
-                    <p className="mt-2 text-sm text-black/60">{activity.role}</p>
+                    <p className="mt-2 text-sm text-[#1F2A44]/60">{activity.role}</p>
                   </div>
 
                   <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 ${statusStyles[activity.status].badge}`}>
@@ -127,28 +127,28 @@ export default function ActivityHistory({
                   </div>
                 </div>
 
-                <div className="mt-4 flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-black/55">
-                  <span className="rounded-full border border-black/10 bg-white/80 px-2.5 py-1.5">
+                <div className="mt-4 flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-[#1F2A44]/55">
+                  <span className="rounded-full border border-[#1F2A44]/10 bg-white/80 px-2.5 py-1.5">
                     {activity.date}
                   </span>
-                  <span className="rounded-full border border-black/10 bg-white/80 px-2.5 py-1.5">
+                  <span className="rounded-full border border-[#1F2A44]/10 bg-white/80 px-2.5 py-1.5">
                     {activity.points} pts
                   </span>
-                  <span className="rounded-full border border-black/10 bg-white/80 px-2.5 py-1.5">
+                  <span className="rounded-full border border-[#1F2A44]/10 bg-white/80 px-2.5 py-1.5">
                     {activity.badge}
                   </span>
                 </div>
 
-                <p className="mt-4 text-sm leading-relaxed text-black/70">{activity.description}</p>
+                <p className="mt-4 text-sm leading-relaxed text-[#1F2A44]/70">{activity.description}</p>
 
-                <div className="mt-5 flex items-center justify-between gap-3 border-t border-black/10 pt-4">
-                  <div className="text-sm text-black/60">
-                    Proof: <span className="font-medium text-black/80">{activity.proof}</span>
+                <div className="mt-5 flex items-center justify-between gap-3 border-t border-[#1F2A44]/10 pt-4">
+                  <div className="text-sm text-[#1F2A44]/60">
+                    Proof: <span className="font-medium text-[#1F2A44]/80">{activity.proof}</span>
                   </div>
 
                   <button
                     type="button"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-[#111111] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-[#1F2A44] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F2A44]"
                   >
                     View detail
                     <ArrowRight size={15} />
