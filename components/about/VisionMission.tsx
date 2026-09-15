@@ -1,66 +1,48 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
-const pillars = [
+const statements = [
   {
-    title: "Student-led learning",
-    text: "SAIT grows through a student-first approach to learning, participation, and peer exchange.",
+    label: "Vision",
+    text: "To build a connected student community where every IT student is encouraged to learn beyond the classroom, explore technology, create meaningful work, and grow together.",
   },
   {
-    title: "Workshops and seminars",
-    text: "The community creates space for learning beyond the classroom through technical sessions and discussions.",
-  },
-  {
-    title: "Course-related engagement",
-    text: "Learning is connected to academic life through classes, resources, and shared understanding.",
-  },
-  {
-    title: "Projects and collaboration",
-    text: "Students build together through practical work, ideas, and ongoing teamwork.",
-  },
-  {
-    title: "Student publications",
-    text: "The department magazine and student contributions help preserve writing, creativity, and technical work.",
-  },
-  {
-    title: "Connected community",
-    text: "Interaction between students, teachers, staff, and alumni strengthens the department community.",
+    label: "Mission",
+    text: "To create opportunities for students to learn, build, participate, share ideas, connect with alumni and peers, and contribute to the academic and student life of the Information Technology community.",
   },
 ];
 
 export default function VisionMission() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="border-b border-black/10 px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-12 max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
-            What SAIT is about
+            02 — Vision &amp; Mission
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
-            A student community built around learning, sharing, and doing.
+            Learning with purpose. Growing together.
           </h2>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {pillars.map((pillar, index) => (
+        <div className="grid gap-0 border-y border-black/10 md:grid-cols-2">
+          {statements.map((statement, index) => (
             <motion.article
-              key={pillar.title}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={statement.label}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+              whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.35, delay: index * 0.05 }}
-              className="rounded-[2rem] border border-black/10 bg-white/30 p-6"
+              transition={{ duration: shouldReduceMotion ? 0.15 : 0.45, delay: shouldReduceMotion ? 0 : index * 0.08, ease: "easeOut" }}
+              className={`px-1 py-8 md:px-8 md:py-10 ${index === 0 ? "md:border-r md:border-black/10" : "border-t border-black/10 md:border-t-0"}`}
             >
-              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#C6A75E] text-sm font-semibold text-white">
-                0{index + 1}
-              </div>
-
-              <h3 className="text-2xl font-medium tracking-tight text-[#111111]">
-                {pillar.title}
-              </h3>
-              <p className="mt-4 text-base leading-relaxed text-black/65">
-                {pillar.text}
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A75E]">
+                {statement.label}
+              </p>
+              <p className="mt-5 max-w-xl text-xl leading-relaxed text-[#1F2A44] md:text-2xl">
+                {statement.text}
               </p>
             </motion.article>
           ))}
