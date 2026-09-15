@@ -19,7 +19,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
   const duration = shouldReduceMotion ? 0.12 : 0.5;
 
   return (
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence initial={false}>
       <motion.div
         key={pathname}
         initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
