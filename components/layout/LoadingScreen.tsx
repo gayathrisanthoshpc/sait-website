@@ -196,7 +196,17 @@ export default function LoadingScreen() {
     return unsubscribe;
   }, [progressMV]);
 
-  if (!mounted || !showLoader) {
+  if (!mounted) {
+    return (
+      <div
+        aria-hidden="true"
+        className="fixed inset-0 z-[9999] select-none overflow-hidden"
+        style={{ backgroundColor: BACKGROUND }}
+      />
+    );
+  }
+
+  if (!showLoader) {
     return null;
   }
 
